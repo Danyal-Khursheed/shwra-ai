@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "@fontsource/readex-pro";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme {
+  --color-primary: #173039; /* Primary color */
+  --color-primary-ai: #bda4a1;
+  --color-primary-golden: #fcf8f0;
+  --color-background: #ffffff; /* Example background */
+  --color-foreground: #000000; /* Example foreground */
+  --font-sans: var(
+    --font-geist-sans,
+    "Inter",
+    sans-serif
+  ); /* Fallback if Geist is undefined */
+  --font-mono: var(--font-geist-mono, "Menlo", monospace); /* Fallback */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  font-family: "Readex Pro", sans-serif;
+}
+
+.custom_font_bold {
+  font-family: "Readex Pro", sans-serif;
+  font-weight: 700;
+}

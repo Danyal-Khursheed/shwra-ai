@@ -1,0 +1,93 @@
+"use client";
+import { useLocale } from "next-intl";
+import React, { FC } from "react";
+
+interface Tab {
+  id: string;
+  title: string;
+  titleEn: string;
+}
+
+interface TabBarProps {
+  activeTab: string | undefined;
+  handleActiveTab: (id: string) => void;
+}
+
+const HorizontalTabBar: FC<TabBarProps> = ({ activeTab, handleActiveTab }) => {
+  const locale = useLocale();
+  const isEN = locale === "en";
+  return (
+    <div className="overflow-x-auto scrollbar-hide p-4 px-7">
+      <div className="flex w-max mx-auto border-y border-gray-300 py-2 items-center justify-center space-x-4 rtl:space-x-reverse">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            onClick={() => handleActiveTab(tab.id)}
+            className={`whitespace-nowrap rounded-full px-6 py-2 h-12 text-sm font-medium transition-all duration-300 ${
+              activeTab === tab.id
+                ? "bg-gradient-to-l from-[#e0cfcf] to-[#c8b3b3] text-white"
+                : "text-gray-800 hover:text-[#7d6f6f]"
+            }`}
+          >
+            {isEN ? tab.titleEn : tab.title}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default HorizontalTabBar;
+
+const tabs = [
+  {
+    id: "tab-001",
+    title: "مشير",
+    titleEn: "Musheer",
+  },
+  {
+    id: "tab-002",
+    title: "محرك البحث",
+    titleEn: "Search Engine",
+  },
+  {
+    id: "tab-003",
+    title: "صياغة العقود",
+    titleEn: "Contract Drafting",
+  },
+  {
+    id: "tab-004",
+    title: "مراجعة العقود",
+    titleEn: "Contract Review",
+  },
+  {
+    id: "tab-005",
+    title: "تحليل القضايا",
+    titleEn: "Case Analysis",
+  },
+  {
+    id: "tab-006",
+    title: "ترجمة قانونية",
+    titleEn: "Legal Translation",
+  },
+  {
+    id: "tab-007",
+    title: "صياغة مستندات قانونية",
+    titleEn: "Legal Document Drafting",
+  },
+  {
+    id: "tab-008",
+    title: "مراجعة مستندات قانونية",
+    titleEn: "Legal Document Review",
+  },
+  {
+    id: "tab-009",
+    title: "تلخيص مستندات قانونية",
+    titleEn: "Legal Document Summarization",
+  },
+  {
+    id: "tab-010",
+    title: "إدارة وتنظيم مهام المحامي",
+    titleEn: "Lawyer Task Management",
+  },
+];
