@@ -5,11 +5,8 @@ import Hero from "@/components/Home/Hero";
 import Packages from "@/components/Home/Packages";
 import Services from "@/components/Home/Services";
 import State from "@/components/Home/State";
-import { useTranslations } from "next-intl";
 
 export default function Home() {
-  const t = useTranslations();
-
   return (
     <div className="flex flex-col gap-7">
       <div

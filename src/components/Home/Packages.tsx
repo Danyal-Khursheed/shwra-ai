@@ -54,12 +54,18 @@ const Packages = () => {
 
 export default Packages;
 
-const PackageCard = ({
+interface PackageCardProps {
+  items: ShawraPackage;
+  ind: number;
+  expandedCardIndex: number | null;
+  handleToggleExpand: (index: number) => void;
+}
+
+const PackageCard: React.FC<PackageCardProps> = ({
   items,
   ind,
   expandedCardIndex,
-  handleToggleExpand,
-}: any) => {
+}) => {
   const t = useTranslations();
 
   return (
@@ -103,7 +109,7 @@ const PackageCard = ({
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  {items?.features.map((el: any, index: number) => (
+                  {items?.features.map((el: Feature, index: number) => (
                     <div key={index} className="flex mt-5 flex-row gap-2 py-1">
                       <Image
                         src={el.isActive ? Images.check : Images.uncheck}
@@ -166,3 +172,17 @@ const shawraPackages = [
     ],
   },
 ];
+
+interface Feature {
+  name: string;
+  isActive: boolean;
+}
+
+interface ShawraPackage {
+  name: string;
+  description: string;
+  price: string;
+  currency?: string; // optional since it's not present in all objects
+  isCustom: boolean;
+  features: Feature[];
+}

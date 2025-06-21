@@ -2,12 +2,6 @@
 import { useLocale } from "next-intl";
 import React, { FC } from "react";
 
-interface Tab {
-  id: string;
-  title: string;
-  titleEn: string;
-}
-
 interface TabBarProps {
   activeTab: string | undefined;
   handleActiveTab: (id: string) => void;

@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import { menuItems } from "./menuItems";
 import useLanguage from "@/hooks/useLanguage";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useLocale } from "next-intl";
@@ -18,13 +17,10 @@ interface MenuItem {
   toggleMenu?: () => void;
 }
 
-
 const MenuMapping = ({ toggleMenu }: { toggleMenu?: () => void }) => {
   const { isArabic } = useLanguage();
   const locale = useLocale();
-  const [hoverItem, setHoverItem] = useState<number | null>(null);
   const pathname = usePathname();
-  const activeLink = `/${pathname.split("/").slice(2).join("/")}`;
   const isHomePage = ["/en", "/ar"].includes(pathname);
   const isMobile = useScreenWidth(768);
 
@@ -133,22 +129,22 @@ const MenuMapping = ({ toggleMenu }: { toggleMenu?: () => void }) => {
                 </div>
               </>
             ) : ( */}
-              <motion.div
-                variants={slideIn(0, -10, { delay: index * 0.1 })}
-                initial="initial"
-                whileInView={"animate"}
-                viewport={{ once: isMobile ? false : true }}
+            <motion.div
+              variants={slideIn(0, -10, { delay: index * 0.1 })}
+              initial="initial"
+              whileInView={"animate"}
+              viewport={{ once: isMobile ? false : true }}
+            >
+              <Link
+                onClick={toggleMenu}
+                href={`/${locale}${item.href} ` || "/"}
+                className={`text-red hover:text-lightBlue cursor-pointer ${
+                  isActive ? "text-primaryGolden" : ""
+                }  ${isArabic ? "md:text-left" : "md:text-right"}`}
               >
-                <Link
-                  onClick={toggleMenu}
-                  href={`/${locale}${item.href} ` || "/"}
-                  className={`text-red hover:text-lightBlue cursor-pointer ${
-                    isActive ? "text-primaryGolden" : ""
-                  }  ${isArabic ? "md:text-left" : "md:text-right"}`}
-                >
-                  {isArabic ? item.arabicLabel : item.label}
-                </Link>
-              </motion.div>
+                {isArabic ? item.arabicLabel : item.label}
+              </Link>
+            </motion.div>
             {/* )} */}
           </div>
         );

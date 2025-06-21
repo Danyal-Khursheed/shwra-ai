@@ -6,7 +6,7 @@ import HorizontalTabBar from "../tabbar/Tabbar";
 import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 import { motion } from "framer-motion";
-import { fadeIn, slideIn } from "@/animations";
+import { slideIn } from "@/animations";
 
 const Services = () => {
   const t = useTranslations();

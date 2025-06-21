@@ -8,6 +8,12 @@ import { Images } from "../../../public/assets/Images";
 function Footer() {
   const translate = useTranslations("");
   const language = useLocale();
+  type LinkItem = {
+    id: number;
+    title: string;
+    href: string;
+  };
+
   const Links = [
     { id: 1, title: translate("Home"), href: "/" },
     { id: 2, title: translate("About Shwra"), href: "/board-of-directors" },
@@ -34,7 +40,7 @@ function Footer() {
               className="flex md:text-start md:flex-row flex-col gap-5 text-base"
               style={{ fontWeight: 300 }}
             >
-              {Links?.map((dropdown: any, i: number) => (
+              {Links?.map((dropdown: LinkItem, i: number) => (
                 <li key={i}>
                   <Link
                     className="flex flex-col border-b border-[#171717] w-fit"

@@ -1,11 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 import Language from "./components/Language";
 import useLanguage from "@/hooks/useLanguage";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import MenuMapping from "./components/menuMapping";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
@@ -14,7 +13,6 @@ import useScreenWidth from "@/hooks/useWindowWidth";
 
 const UpdatedNavBar = () => {
   const { isArabic } = useLanguage();
-  const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
   const pathname = usePathname();

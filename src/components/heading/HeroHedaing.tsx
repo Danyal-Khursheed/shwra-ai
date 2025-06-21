@@ -2,8 +2,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "@/animations";
-import { usePathname } from "next/navigation";
-import { useLocale, useTranslations } from "next-intl";
 
 interface HeadingTitleProps {
   text?: string;
