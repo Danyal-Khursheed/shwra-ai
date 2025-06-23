@@ -41,7 +41,7 @@ const Packages = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  });
 
   return (
     <div className="flex flex-col gap-5 text-black">
@@ -74,7 +74,7 @@ const Packages = () => {
           className="mySwiper"
         >
           {packageData?.map((item: Package, ind: number) => (
-            <SwiperSlide>
+            <SwiperSlide key={ind}>
               <PackageCard
                 key={ind}
                 items={item}
