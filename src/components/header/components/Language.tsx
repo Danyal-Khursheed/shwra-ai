@@ -41,7 +41,7 @@ const Language = () => {
         <div>
           <button
             onClick={changeLocale}
-            className="p-2  rounded flex flex-row gap-2"
+            className="p-2  rounded flex cursor-pointer flex-row gap-2"
           >
             <Image
               className="hidden md:block mt-1"

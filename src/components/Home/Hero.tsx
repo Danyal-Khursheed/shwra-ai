@@ -46,7 +46,7 @@ const Hero = () => {
           variants={slideIn(50, 0, { delay: 0.2, duration: 0.6 })}
           initial="initial"
           animate="animate"
-          className="flex flex-row gap-3 justify-center items-center border border-white p-3 px-4 rounded-4xl w-max"
+          className="flex flex-row gap-3 justify-center items-center border border-white p-3 px-4 rounded-4xl mx-4"
         >
           <Image src={Images.ShwraBrownLogo} width={30} height={30} alt="" />
           <p className="text-sm">

@@ -165,7 +165,7 @@ const ServiceData = [
       "Customizable contract drafting that includes all the details you need without complexity.",
     ],
     image: Images.contract_drafting_service,
-    responsiveImage: Images.contract_drafting,
+    responsiveImage: Images.summerization,
   },
   {
     id: "tab-004",

@@ -47,4 +47,5 @@ export const Images = {
   contract_drafting_service:
     "/assets/Icons/service/contract_drafting_service.svg",
   search_engine_service: "/assets/Icons/service/search_engine_service.svg",
+  heroBackground: "/assets/Icons/heroBackground.png",
 };

@@ -38,7 +38,7 @@ const UpdatedNavBar = () => {
   return (
     <div
       style={{ direction: isArabic ? "rtl" : "ltr" }}
-      className={`w-full flex justify-around items-center py-3 bg-transparent  z-40 text-white`}
+      className={`w-full flex justify-around items-center md:py-3 bg-transparent  z-40 text-white`}
     >
       <div
         className={`hidden lg:flex items-center  
@@ -75,7 +75,7 @@ const UpdatedNavBar = () => {
       {/* Mobile Header */}
       <div
         id="updated-navbar"
-        className={`flex bg-primary lg:hidden items-center justify-between w-full px-4 py-3 responsive-Header-color fixed top-[0px]  left-0 z-20`}
+        className={`flex  lg:hidden items-center justify-between w-full px-4 py-3 responsive-Header-color  top-0  left-0 z-20`}
       >
         <Image
           src={Images.MobileShwraLogo}

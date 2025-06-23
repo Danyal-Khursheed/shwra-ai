@@ -17,7 +17,7 @@ const HorizontalTabBar: FC<TabBarProps> = ({ activeTab, handleActiveTab }) => {
           <button
             key={tab.id}
             onClick={() => handleActiveTab(tab.id)}
-            className={`whitespace-nowrap rounded-full px-6 py-2 h-12 text-sm font-medium transition-all duration-300 ${
+            className={`whitespace-nowrap rounded-full cursor-pointer px-6 py-2 h-12 text-sm font-medium transition-all duration-300 ${
               activeTab === tab.id
                 ? "bg-gradient-to-l from-[#e0cfcf] to-[#c8b3b3] text-white"
                 : "text-gray-800 hover:text-[#7d6f6f]"

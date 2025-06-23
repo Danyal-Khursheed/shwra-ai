@@ -1,14 +1,21 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import HeadingTitle from "../heading/HeroHedaing";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 import axios from "axios";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css/pagination";
 
 const Packages = () => {
   const t = useTranslations();
+  const locale = useLocale();
+  const [packageData, setPackageData] = useState<Package[]>([]);
   const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(
     null
   );
@@ -17,15 +24,24 @@ const Packages = () => {
     setExpandedCardIndex(expandedCardIndex === index ? null : index);
   };
 
-  const fetchData = () => {
-    const response = axios.get(
-      `https://shwraapidevops.azurewebsites.net/api/Subscription/GetAllPackages?NoOfUsers=0`
-    );
-    console.log(response);
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        `https://shwraapidevops.azurewebsites.net/api/Subscription/GetAllPackages?NoOfUsers=0`,
+        {
+          headers: {
+            "Accept-Language": locale === "en" ? "en-US" : "ar-SA",
+          },
+        }
+      );
+      setPackageData(response?.data?.result);
+    } catch (error) {
+      console.log(error);
+    }
   };
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   return (
     <div className="flex flex-col gap-5 text-black">
@@ -37,8 +53,8 @@ const Packages = () => {
         )}
       />
 
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-12 mt-10 max-w-[90%] mx-auto">
-        {shawraPackages.map((item, ind) => (
+      <div className=" hidden md:grid grid-cols-1 md:grid-cols-3 gap-12 mt-10 w-[90%] max-w-[1400px] mx-auto  p-4">
+        {packageData?.map((item: Package, ind: number) => (
           <PackageCard
             key={ind}
             items={item}
@@ -48,6 +64,28 @@ const Packages = () => {
           />
         ))}
       </div>
+      <div className="md:hidden block">
+        <Swiper
+          navigation={true}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop={true}
+          modules={[Navigation, Pagination, Autoplay]}
+          className="mySwiper"
+        >
+          {packageData?.map((item: Package, ind: number) => (
+            <SwiperSlide>
+              <PackageCard
+                key={ind}
+                items={item}
+                ind={ind}
+                expandedCardIndex={expandedCardIndex}
+                handleToggleExpand={handleToggleExpand}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
@@ -55,7 +93,7 @@ const Packages = () => {
 export default Packages;
 
 interface PackageCardProps {
-  items: ShawraPackage;
+  items: Package;
   ind: number;
   expandedCardIndex: number | null;
   handleToggleExpand: (index: number) => void;
@@ -70,19 +108,19 @@ const PackageCard: React.FC<PackageCardProps> = ({
 
   return (
     <div
-      style={{ boxShadow: "0px 5px 20px 0px #14142B14" }}
-      className={`w-full flex flex-col justify-between overflow-hidden rounded-xl min-h-[400px] p-8 bg-white`}
+      // style={{ boxShadow: "0px 5px 20px 0px #14142B14" }}
+      className={`md:w-full flex flex-col justify-between bg-white overflow-hidden rounded-xl min-h-[400px] p-8 my-4 w-[90%] shadow-md `}
     >
       <div className="flex flex-col overflow-x-hidden gap-3">
         <p className="font-[600] text-[23px] min-h-14">{items.name}</p>
-        <p className="text-[14px] text-[#667085] py-4  min-h-24">
+        <p className="text-[14px] text-[#667085] py-4  md:min-h-24 min-h-20">
           {items.description}
         </p>
 
-        {!items.isCustom ? (
+        {true ? (
           <>
             <p className="text-[34px] font-bold flex flex-row justify-center items-center">
-              {items.price}
+              {items.annualPackageAmount}
               <Image src={Images?.riyal} width={30} height={30} alt="" />
             </p>
             <p className="text-center text-[11px] -mt-2">
@@ -91,15 +129,17 @@ const PackageCard: React.FC<PackageCardProps> = ({
           </>
         ) : (
           <p className="text-[34px] font-bold flex flex-row justify-center items-center">
-            {items.price}
+            {items.annualPackageAmount}
           </p>
         )}
 
         {items.features && (
           <>
-            <p className="mt-6  text-[#170F49] font-semibold">{t("Include")}</p>
+            <p className="md:mt-6 mt-2  text-[#170F49] font-semibold">
+              {t("Include")}
+            </p>
 
-            <div className="mt-2 text-sm">
+            <div className="mt-2 text-sm min-h-72">
               <AnimatePresence initial={false}>
                 <motion.div
                   key={expandedCardIndex === ind ? "expanded" : "collapsed"}
@@ -110,7 +150,10 @@ const PackageCard: React.FC<PackageCardProps> = ({
                   className="overflow-hidden"
                 >
                   {items?.features.map((el: Feature, index: number) => (
-                    <div key={index} className="flex mt-5 flex-row gap-2 py-1">
+                    <div
+                      key={index}
+                      className="flex md:mt-5 mt-2 flex-row gap-2 py-1"
+                    >
                       <Image
                         src={el.isActive ? Images.check : Images.uncheck}
                         alt="Check"
@@ -130,59 +173,32 @@ const PackageCard: React.FC<PackageCardProps> = ({
   );
 };
 
-const shawraPackages = [
-  {
-    name: "طالب القانون",
-    description:
-      "الباقة المصممة لاحتياجات الطلبة القانونية الدراسية، من المرحلة الجامعية الأولى إلى الدراسات العليا، لبناء مستقبل قانوني قوي.",
-    price: "3,000",
-    isCustom: false,
-    features: [
-      { name: "مدير آلي", isActive: true },
-      { name: "محرك بحث", isActive: true },
-      { name: "عدد محدود من الأسئلة", isActive: true },
-      { name: "الحصول على آخر التحديثات القانونية", isActive: true },
-      { name: "مدير حساب", isActive: true },
-    ],
-  },
-  {
-    name: "الممارس القانوني",
-    description: "باقة مناسبة للإمكانيات الحالية لأعمال الممارس القانوني.",
-    price: "956.25",
-    isCustom: false,
-    features: [
-      { name: "مدير آلي", isActive: true },
-      { name: "محرك بحث", isActive: true },
-      { name: "عدد غير محدود من الأسئلة", isActive: true },
-      { name: "الحصول على آخر التحديثات القانونية", isActive: true },
-    ],
-  },
-  {
-    name: "الشركات والجهات الحكومية",
-    description: "مُصمم ليتم تحديده وتشكيله حسب احتياجات الكيان القانوني.",
-    price: "مخصص",
-    currency: "",
-    isCustom: true,
-    features: [
-      { name: "مدير آلي", isActive: true },
-      { name: "محرك بحث", isActive: true },
-      { name: "مدير حساب", isActive: true },
-      { name: "عدد غير محدود من الأسئلة", isActive: true },
-      { name: "الحصول على آخر التحديثات القانونية", isActive: true },
-    ],
-  },
-];
-
-interface Feature {
-  name: string;
-  isActive: boolean;
-}
-
-interface ShawraPackage {
+export interface Package {
+  id: string;
   name: string;
   description: string;
-  price: string;
-  currency?: string; // optional since it's not present in all objects
-  isCustom: boolean;
+  annualPackageAmountNotSpecified: boolean;
+  annualPackageAmount: number;
+  vat: number;
+  annualPackageAmountWithVAT: number;
+  amountPerUser: number;
+  refundAmount: number | null;
+  payableAmount: number | null;
+  numberOfUserNotSpecified: boolean;
+  numberOfUser: number;
+  accountManager: boolean;
+  allowedPaymentMethods: number[];
+  isActive: boolean;
+  recommendedFor: number;
   features: Feature[];
+}
+
+export interface Feature {
+  id: string;
+  name: string;
+  description: string | null;
+  amount: number;
+  route: string | null;
+  refCode: string;
+  isActive: boolean;
 }

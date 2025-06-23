@@ -10,11 +10,15 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-7">
       <div
-        style={{
-          background:
-            "radial-gradient(circle at center, #3A4950 10%,	#12252D 90%)",
-        }}
-        className=" mb-16"
+        className="
+    mb-16
+    md:bg-[url('/assets/Icons/heroBackground.svg'),radial-gradient(circle_at_center,_#4A5A62_5%,_#12252D_50%)]
+bg-[url('/assets/Icons/heroBackgroundMobile.svg'),radial-gradient(circle_at_center,_#4A5A62_5%,_#12252D_50%)]
+    bg-cover
+    bg-start
+    bg-repeat
+    
+  "
       >
         <UpdatedNavBar />
         <Hero />
