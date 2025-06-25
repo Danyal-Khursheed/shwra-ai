@@ -3,14 +3,19 @@ import ContactSection from "@/components/ContactUs/ContactUs";
 import HeadingTitle from "@/components/heading/HeroHedaing";
 import Accordion from "@/utils/Accordion";
 import { useTranslations } from "next-intl";
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import { motion } from "framer-motion";
 import { slideIn } from "@/animations";
-import EndSection from "@/components/end-section/EndSection";
+
 import { faqsData } from "@/constant/faqsData";
 
-const FaqChild = ({ params }: { params: { locale: string } }) => {
+interface FaqInterface {
+  locale: string;
+}
+
+const FaqChild: FC<FaqInterface> = ({ locale }) => {
   const translate = useTranslations("");
+  console.log(locale);
 
   const [openIndex, setOpenIndex] = useState<number>(0);
 

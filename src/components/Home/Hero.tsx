@@ -5,7 +5,6 @@ import React from "react";
 import { Images } from "../../../public/assets/Images";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "@/animations";
-import Link from "next/link";
 
 const Hero = () => {
   const t = useTranslations();

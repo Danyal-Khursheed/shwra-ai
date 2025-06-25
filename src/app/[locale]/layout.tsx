@@ -5,7 +5,6 @@ import type { Metadata } from "next";
 import "../../globals.css";
 import Footer from "@/components/header/Footer";
 import { ReactNode } from "react";
-import UpdatedNavBar from "@/components/header/UpdatedNavBar";
 import Navbar from "@/components/header/Navbar";
 
 const geistSans = Geist({

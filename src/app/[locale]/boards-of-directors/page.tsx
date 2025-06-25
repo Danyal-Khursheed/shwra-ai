@@ -2,7 +2,6 @@
 import HeadingTitle from "@/components/heading/HeroHedaing";
 import React from "react";
 import "./compoenents/boardOfDirectors.css";
-import Image from "next/image";
 import TeamMemberDesign from "./compoenents/TeamMemberDesign";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -16,7 +15,7 @@ import { Images } from "../../../../public/assets/Images";
 
 // Dynamic metadata function
 
-const AboutUsChild = ({ params }: { params: { locale: string } }) => {
+const AboutUsChild = () => {
   const teamMemberData = [
     {
       name: "Saleh Elassaf",
@@ -140,7 +139,7 @@ const AboutUsChild = ({ params }: { params: { locale: string } }) => {
         >
           {teamMemberData
             ?.slice(0, 3)
-            ?.sort((a, b) => (locale === "ar" ? -1 : 1))
+            ?.sort(() => (locale === "ar" ? -1 : 1))
             ?.map((data, ind) => (
               <TeamMemberDesign
                 key={ind}

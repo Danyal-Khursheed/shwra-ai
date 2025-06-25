@@ -8,6 +8,25 @@ import { slideIn } from "@/animations";
 import useScreenWidth from "@/hooks/useWindowWidth";
 import { Images } from "../../../../../public/assets/Images";
 
+interface TeamMember {
+  index?: number;
+  name: string;
+  position: string;
+  description: string;
+  image: string;
+  linkedin: string;
+  email: string;
+  Qualifications: string;
+  degrees: {
+    degreeName1: string;
+    degreeLocation: string;
+    degreeName2: string;
+    degreeLocation2: string;
+    degreeName3?: string;
+    degreeLocation3?: string;
+  };
+}
+
 const TeamMemberDesign = ({
   image,
   name,
@@ -18,7 +37,7 @@ const TeamMemberDesign = ({
   Qualifications,
   degrees,
   index,
-}: any) => {
+}: TeamMember) => {
   const translate = useTranslations();
   const isMobile = useScreenWidth(860);
 
@@ -26,7 +45,7 @@ const TeamMemberDesign = ({
     <motion.div
       variants={slideIn(0, isMobile ? 0 : 100, {
         opacity: 0,
-        delay: index * 0.2,
+        delay: index && index * 0.2,
       })}
       initial="initial"
       whileInView={"animate"}
