@@ -1,5 +1,3 @@
-
-
 interface MenuItem {
   label: string;
   arabicLabel: string;
@@ -20,13 +18,12 @@ export const menuItems: MenuItem[] = [
     label: "About Shwra",
     arabicLabel: "عن شورى",
     key: "About Shwra",
-    href: "/board-of-directors",
+    href: "/boards-of-directors",
   },
   {
     label: "Contact Us",
     key: "Contact Us",
     arabicLabel: "تواصل معنا",
-  
   },
 
   {

@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { Images } from "../../../public/assets/Images";
+import { motion } from "framer-motion";
+import { slideIn } from "@/animations";
 
 function Footer() {
   const translate = useTranslations("");
@@ -22,7 +24,7 @@ function Footer() {
   ];
 
   return (
-    <section className="font-madaniArabicMedium bg-[#FDF7EC] py-10 mt-16 px-4 md:px-0  text-black">
+    <section className="font-madaniArabicMedium bg-primary-ai-light py-10 mt-16 px-4 md:px-0  text-black">
       <div className="flex flex-col md:flex-row  max-w-[90%] mx-auto">
         <div className="flex flex-col gap-5 flex-1">
           <Image
@@ -55,9 +57,21 @@ function Footer() {
         </div>
         <div className="flex flex-col md:items-end mt-4">
           <div className="flex flex-col items-center gap-3">
-            <button className="md:block hidden  p-3 rounded-lg mt-4 w-80 cursor-pointer bg-primary text-white font-semibold">
-              {translate("start now")}
-            </button>
+            <motion.div
+              variants={slideIn(50, 0, { delay: 1.0, duration: 0.6 })}
+              initial="initial"
+              animate="animate"
+              className="w-full flex justify-center"
+            >
+              <a
+                href="https://dev-musheer-ai.netlify.app/ar/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="md:w-sm w-[80%] p-3 rounded-lg mt-10 cursor-pointer md:font-semibold text-center bg-primary text-white"
+              >
+                {translate("start now")}
+              </a>
+            </motion.div>
           </div>
         </div>
       </div>

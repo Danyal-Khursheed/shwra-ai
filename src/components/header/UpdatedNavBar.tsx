@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 import Language from "./components/Language";
@@ -11,7 +11,11 @@ import { motion } from "framer-motion";
 import { slideIn } from "@/animations";
 import useScreenWidth from "@/hooks/useWindowWidth";
 
-const UpdatedNavBar = () => {
+interface navbarInterface {
+  textBlack?: boolean;
+}
+
+const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
   const { isArabic } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -38,10 +42,12 @@ const UpdatedNavBar = () => {
   return (
     <div
       style={{ direction: isArabic ? "rtl" : "ltr" }}
-      className={`w-full flex justify-around items-center md:py-3 bg-transparent  z-40 text-white`}
+      className={`w-full flex justify-around items-center md:py-3 bg-transparent  z-40 ${
+        textBlack ? "text-black" : "text-white"
+      } `}
     >
       <div
-        className={`hidden lg:flex items-center  
+        className={`hidden lg:flex  items-center  
             justify-between w-full  md:max-w-[80%] `}
       >
         <div className=" flex flex-row gap-8">
@@ -53,13 +59,15 @@ const UpdatedNavBar = () => {
           >
             <Image
               className=""
-              src={Images.ShwraLogo}
+              src={textBlack ? Images.shwra_black : Images.ShwraLogo}
               alt="ShwraLogo"
               width={47}
               height={40}
             />
           </motion.div>
-          {pathname !== `/${locale}/campaign` && <MenuMapping />}
+          {pathname !== `/${locale}/campaign` && (
+            <MenuMapping textBlack={textBlack} />
+          )}
         </div>
         <div className="flex flex-row gap-8">
           <motion.div
@@ -85,7 +93,7 @@ const UpdatedNavBar = () => {
         />
         <div className="flex flex-row gap-5">
           <div className="">
-            <Language />
+            <Language textBlack={textBlack} />
           </div>
           <button onClick={toggleMenu} className="">
             <Image

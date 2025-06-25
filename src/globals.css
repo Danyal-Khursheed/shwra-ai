@@ -9,6 +9,7 @@
 @theme {
   --color-primary: #173039; /* Primary color */
   --color-primary-ai: #bda4a1;
+  --color-primary-ai-light: #eee8e7;
   --color-primary-golden: #fcf8f0;
   --color-background: #ffffff; /* Example background */
   --color-foreground: #000000; /* Example foreground */

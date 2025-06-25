@@ -35,33 +35,28 @@ const Services = () => {
       />
 
       {selectedService && (
-        <div className="md:bg-primary-golden  w-[95%] mx-auto md:min-h-[80vh] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
+        <div className="md:bg-primary-ai-light  w-[95%] mx-auto md:min-h-[80vh] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
           {/* Text Content */}
-          <div className="w-full flex justify-center items-start flex-col md:p-7 p-2 gap-5">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-full flex justify-center items-start flex-col md:p-7 p-2 gap-5"
+          >
             <h1 className="text-[28px] md:block hidden md:text-[40px] text-primary-ai font-bold">
               {selectedService.title}
             </h1>
 
-            <p className="text-gray-500 min-h-12">
+            <p className="text-gray-500 min-h-12 md:text-[16px] text-[14px]">
               {selectedService.description}
             </p>
 
-            <ul className="list-disc md:ms-7 ms-3 text-gray-500 space-y-2">
+            <ul className="list-disc md:ms-7 ms-3 text-gray-500 space-y-2 md:text-[16px] text-[14px]">
               {selectedService.points?.map((point, idx) => (
-                <motion.li
-                  key={idx}
-                  variants={slideIn(50, 0, {
-                    delay: 0.7 + idx * 0.1,
-                    duration: 0.6,
-                  })}
-                  initial="initial"
-                  animate="animate"
-                >
-                  {point}
-                </motion.li>
+                <li key={idx}>{point}</li>
               ))}
             </ul>
-          </div>
+          </motion.div>
 
           {/* Image Content */}
           <div className="w-full flex justify-center items-center aspect-[4/3]">
@@ -71,14 +66,14 @@ const Services = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="md:block hidden w-full h-full"
+              className="md:block hidden w-full h-full rounded-lg"
             >
               <Image
                 src={selectedService.image}
                 alt={selectedService.titleEn}
                 width={600}
                 height={400}
-                className="rounded-lg w-full h-full object-contain"
+                className="rounded-xl w-full h-full object-contain"
               />
             </motion.div>
 

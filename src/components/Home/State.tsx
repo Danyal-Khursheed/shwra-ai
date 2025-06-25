@@ -9,6 +9,7 @@ import { fadeIn, slideIn } from "@/animations";
 import CountUp from "react-countup";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 interface cardinterface {
   title: string;
@@ -17,13 +18,15 @@ interface cardinterface {
 
 const State = () => {
   const t = useTranslations();
+  const router = useRouter();
   return (
     <div>
       <Banner
         text={t("Among law firms that use artificial intelligence")}
         boldText={"72%"}
         buttonText={t("start now")}
-        onClick={() => console.log("")}
+        Link="https://dev-musheer-ai.netlify.app/ar/"
+        onClick={() => router.push("https://dev-musheer-ai.netlify.app/ar/")}
       />
 
       <div className="flex md:flex-row flex-col w-full md:p-10 pt-10 ">
@@ -51,7 +54,7 @@ const State = () => {
               initial="initial"
               whileInView="animate"
               viewport={{ once: true }}
-              className="md:w-[80% font-bold md:text-[40px] text-[22px] px-4"
+              className="md:w-[80% font-bold md:text-[33px] text-[22px] px-4"
             >
               {t(
                 "Artificial intelligence significantly increases the revenues of legal firms from its first year"
@@ -113,9 +116,9 @@ const Card: FC<cardinterface> = ({ title, description }) => {
     <>
       <div
         ref={countRef}
-        className="bg-primary-golden text-black rounded-xl flex flex-col p-4 justify-center items-center h-40 md:gap-6 gap-2"
+        className="bg-primary-ai-light border border-[#DCCFCC] text-black rounded-xl flex flex-col p-4 justify-center items-center h-40 md:gap-6 gap-2"
       >
-        <h1 className="md:text-[36px] text-[26px] font-semibold">
+        <h1 className="md:text-[34px] text-[26px] font-semibold">
           {isInView ? (
             <CountUp
               end={number}
@@ -127,7 +130,7 @@ const Card: FC<cardinterface> = ({ title, description }) => {
             `${prefix}0${suffix}`
           )}
         </h1>
-        <p className="text-center md:text-[16px] text-[12px]">{description}</p>
+        <p className="text-center md:text-[14px] text-[12px]">{description}</p>
       </div>
     </>
   );

@@ -4,6 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { Images } from "../../../public/assets/Images";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { slideIn } from "@/animations";
 
 const Banner = () => {
   const t = useTranslations();
@@ -21,7 +23,7 @@ const Banner = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="md:text-[35px] text-[20px] font-bold leading-snug text-white"
+          className="md:text-[32px] text-[20px] font-bold leading-snug text-white"
         >
           {t(
             "Shwra gives you the power of artificial intelligence to always stay one step ahead"
@@ -36,9 +38,21 @@ const Banner = () => {
         >
           {t("Shwra helps you perform your legal services better in less time")}
         </motion.p>
-        <button className="md:hidden block w-full p-3 rounded-lg mt-4 cursor-pointer bg-primary-ai text-white font-semibold">
-          {t("start now")}
-        </button>
+        <motion.div
+          variants={slideIn(50, 0, { delay: 1.0, duration: 0.6 })}
+          initial="initial"
+          animate="animate"
+          className="w-full  justify-center md:hidden flex"
+        >
+          <a
+            href="https://dev-musheer-ai.netlify.app/ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:w-sm w-[80%] p-3 rounded-lg mt-10 cursor-pointer md:font-semibold text-center bg-primary-ai text-white"
+          >
+            {t("start now")}
+          </a>
+        </motion.div>
       </div>
 
       <motion.div

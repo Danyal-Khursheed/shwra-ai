@@ -17,7 +17,13 @@ interface MenuItem {
   toggleMenu?: () => void;
 }
 
-const MenuMapping = ({ toggleMenu }: { toggleMenu?: () => void }) => {
+const MenuMapping = ({
+  toggleMenu,
+  textBlack,
+}: {
+  toggleMenu?: () => void;
+  textBlack?: boolean;
+}) => {
   const { isArabic } = useLanguage();
   const locale = useLocale();
   const pathname = usePathname();
@@ -139,7 +145,7 @@ const MenuMapping = ({ toggleMenu }: { toggleMenu?: () => void }) => {
                 onClick={toggleMenu}
                 href={`/${locale}${item.href} ` || "/"}
                 className={`text-red hover:text-lightBlue cursor-pointer ${
-                  isActive ? "text-primaryGolden" : ""
+                  isActive ? `${textBlack && "text-primary-ai"}` : ""
                 }  ${isArabic ? "md:text-left" : "md:text-right"}`}
               >
                 {isArabic ? item.arabicLabel : item.label}

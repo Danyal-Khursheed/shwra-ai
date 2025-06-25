@@ -1,0 +1,16 @@
+.custom-pagination .swiper-pagination-bullet {
+  background-color: #f0e8d7; /* Change the background color here */
+  opacity: 1; /* Ensure full opacity */
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background-color: #ddb669; /* Active dot color */
+}
+
+/* Position the pagination dots below the cards */
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Adjust as needed */
+  margin-bottom: 20px;
+}

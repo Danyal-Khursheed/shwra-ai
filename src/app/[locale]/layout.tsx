@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import "../../globals.css";
 import Footer from "@/components/header/Footer";
 import { ReactNode } from "react";
+import UpdatedNavBar from "@/components/header/UpdatedNavBar";
+import Navbar from "@/components/header/Navbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
 
 interface LayoutProps {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<{ locale: string; slug?: string[] }>;
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
@@ -42,9 +44,10 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     <html lang={locale}>
       <body
         dir={locale === "ar" ? "rtl" : "ltr"}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
+          <Navbar />
           {children}
           <Footer />
         </NextIntlClientProvider>

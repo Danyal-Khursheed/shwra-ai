@@ -50,13 +50,17 @@ const Slider = () => {
             spaceBetween: 10, // Increased spacing for larger screens
             slidesPerView: 2.5, // More slides visible for wider screens
           },
+          1400: {
+            spaceBetween: 10, // Increased spacing for larger screens
+            slidesPerView: 2, // More slides visible for wider screens
+          },
         }}
         modules={[Pagination, Autoplay]}
         className="my-swiper"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index} className="relative my-slide aspect-[4/3]">
-            <div className="relative w-full h-full rounded-lg overflow-hidden">
+            <div className="relative w-full h-full rounded-sm overflow-hidden">
               <Image
                 src={slide}
                 alt="Musheer Interface"

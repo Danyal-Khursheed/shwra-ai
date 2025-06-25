@@ -2,9 +2,13 @@ import { Images } from "../../../../public/assets/Images";
 import { useLocale } from "next-intl";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useLayoutEffect, useState } from "react";
+import React, { FC, useLayoutEffect, useState } from "react";
 
-const Language = () => {
+interface LanguageInterface {
+  textBlack?: boolean;
+}
+
+const Language: FC<LanguageInterface> = ({ textBlack }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   useLayoutEffect(() => {
     const handleResize = () => {
@@ -45,7 +49,7 @@ const Language = () => {
           >
             <Image
               className="hidden md:block mt-1"
-              src={Images.Global}
+              src={textBlack ? Images.black_globe : Images.Global}
               alt="Global"
               width={20}
               height={40}

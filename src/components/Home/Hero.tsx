@@ -5,11 +5,12 @@ import React from "react";
 import { Images } from "../../../public/assets/Images";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "@/animations";
+import Link from "next/link";
 
 const Hero = () => {
   const t = useTranslations();
   return (
-    <div className="flex relative flex-col gap-7 h-auto justify-center items-center  md:mt-32 mt-40 mb-20">
+    <div className="flex relative flex-col gap-7 text-white h-auto justify-center items-center  md:mt-32 mt-40 mb-20">
       <div className="flex  justify-center">
         {/* header */}
         <motion.div
@@ -58,31 +59,40 @@ const Hero = () => {
       </div>
       {/* hero */}
       <div className="flex justify-center items-center flex-col gap-5">
-        <motion.p
+        <motion.h1
           variants={slideIn(50, 0, { delay: 0.5, duration: 0.6 })}
           initial="initial"
           animate="animate"
-          className="md:text-[47px] text-[23px] md:max-w-[60%] max-w-[90%] mx-auto text-center"
+          className="md:text-[48px] text-[23px] md:max-w-[60%] max-w-[90%] mx-auto text-center font-semibold"
         >
           {t("Revolutionizing legal services through artificial intelligence")}
-        </motion.p>
+        </motion.h1>
         <motion.p
           variants={slideIn(50, 0, { delay: 0.8, duration: 0.6 })}
           initial="initial"
           animate="animate"
-          className="md:w-[50%] w-[90%] text-center"
+          className="md:w-[50%] w-[90%] text-center text-[16px]"
         >
           {t("Leverage the power of artificial intelligence")}
         </motion.p>
-        <motion.button
+        <motion.div
           variants={slideIn(50, 0, { delay: 1.0, duration: 0.6 })}
           initial="initial"
           animate="animate"
-          className="md:w-sm w-[80%] p-3 rounded-xl mt-10 cursor-pointer"
-          style={{ background: "linear-gradient(to right, #EBDFDE, #BFA7A4)" }}
+          className="w-full flex justify-center"
         >
-          {t("start now")}
-        </motion.button>
+          <a
+            href="https://dev-musheer-ai.netlify.app/ar/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="md:w-sm w-[80%] p-3 rounded-xl mt-10 cursor-pointer md:font-semibold text-center"
+            style={{
+              background: "linear-gradient(to right, #EBDFDE, #BFA7A4)",
+            }}
+          >
+            {t("start now")}
+          </a>
+        </motion.div>
       </div>
     </div>
   );

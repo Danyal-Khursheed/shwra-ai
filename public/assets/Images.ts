@@ -48,4 +48,13 @@ export const Images = {
     "/assets/Icons/service/contract_drafting_service.svg",
   search_engine_service: "/assets/Icons/service/search_engine_service.svg",
   heroBackground: "/assets/Icons/heroBackground.png",
+  EmailNew: "/assets/Icons/FooterIcons/Email.png",
+  Abdualaziz_aldakheel: "/assets/Icons/Team/Abdualaziz_aldakheel.webp",
+  Abdullah_Alamri: "/assets/Icons/Team/Abdullah_Alamri.webp",
+  Mohammad_Aldakheel: "/assets/Icons/Team/Mohammad_Aldakheel.webp",
+  Saleh_alassaf: "/assets/Icons/Team/Saleh_alassaf.webp",
+  Dhaif_Allah: "/assets/Icons/Team/Dhaif_Allah.webp",
+  shwra_black: "/assets/Icons/shwra_black_logo.svg",
+  black_globe: "/assets/Icons/globe.svg",
+  Avatargroup: "/assets/Icons/Avatargroup.svg",
 };
