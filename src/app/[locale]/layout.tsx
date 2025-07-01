@@ -6,6 +6,12 @@ import "../../globals.css";
 import Footer from "@/components/header/Footer";
 import { ReactNode } from "react";
 import Navbar from "@/components/header/Navbar";
+import {
+  SiteDescriptionArabic,
+  SiteDescriptionEnglish,
+  SiteTitleArabic,
+  SiteTitleEnglish,
+} from "@/constant/meta_data";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,10 +23,20 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Shwra AI", // Updated title
-  description: "Innovative AI solutions for businesses",
-};
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: string };
+}): Promise<Metadata> {
+  return {
+    title: locale === "en" ? SiteTitleEnglish : SiteTitleArabic,
+    description:
+      locale === "en" ? SiteDescriptionEnglish : SiteDescriptionArabic,
+    icons: {
+      icon: "/favIcon.svg",
+    },
+  };
+}
 
 interface LayoutProps {
   children: ReactNode;
