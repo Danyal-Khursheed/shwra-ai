@@ -13,9 +13,8 @@ interface FaqInterface {
   locale: string;
 }
 
-const FaqChild: FC<FaqInterface> = ({ locale }) => {
-  const translate = useTranslations("");
-  console.log(locale);
+const FaqChild: FC<FaqInterface> = () => {
+  const translate = useTranslations();
 
   const [openIndex, setOpenIndex] = useState<number>(0);
 
@@ -72,6 +71,7 @@ const FaqChild: FC<FaqInterface> = ({ locale }) => {
                 <Accordion
                   question={translate(data.question)}
                   answer={translate(data.answer)}
+                  list={data.list?.map((item) => item)}
                   isOpen={openIndex === ind}
                   onToggle={() => handleToggle(ind)}
                 />

@@ -24,6 +24,7 @@ export const menuItems: MenuItem[] = [
     label: "Contact Us",
     key: "Contact Us",
     arabicLabel: "تواصل معنا",
+    href: "/contact-us",
   },
 
   {

@@ -57,4 +57,5 @@ export const Images = {
   shwra_black: "/assets/Icons/shwra_black_logo.svg",
   black_globe: "/assets/Icons/globe.svg",
   Avatargroup: "/assets/Icons/Avatargroup.svg",
+  copy: "/assets/Icons/copy.svg",
 };

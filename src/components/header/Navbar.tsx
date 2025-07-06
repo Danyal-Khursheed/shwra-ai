@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname();
   console.log(pathname, "pathname");
-  const pathNameArray = ["boards-of-directors", "faqs"];
+  const pathNameArray = ["boards-of-directors", "faqs", "contact-us"];
 
   const show_navbar = pathNameArray.some((ele) => {
     return pathname.includes(ele);

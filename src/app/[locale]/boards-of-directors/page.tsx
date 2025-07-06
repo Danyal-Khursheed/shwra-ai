@@ -132,7 +132,7 @@ const AboutUsChild = () => {
         />
 
         <div
-          className={`hidden ${
+          className={`hidden mt-10 ${
             locale === "en" ? "" : "md:flex-row-reverse"
           } md:flex  flex-col gap-2 lg:gap-7 
         md:flex-row flex-wrap justify-between xl:px-10 max-w-[85%] mx-auto`}

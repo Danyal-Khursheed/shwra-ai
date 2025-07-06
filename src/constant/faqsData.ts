@@ -1,50 +1,65 @@
 export const faqsData = [
   {
-    question: "about shwra",
-    answer: "about shwra Answer",
+    question: "What is the Mushir service?",
+    answer: "What is the Mushir service description",
   },
   {
-    question: "Is the Shwra platform licensed?",
-    answer: "Is the Shwra platform licensed? Answer",
+    question: "Can the legal consultations provided by Mushir be relied upon?",
+    answer: "Mushir has been trained on Saudi laws",
   },
   {
-    question: "How do I request a consultation or other legal services?",
-    answer: "How do I request a consultation or other legal services? Answer",
+    question:
+      "What is the difference between a legal search engine and Musheer?",
+    answer:
+      "Musheer provides intelligent legal consultations based on an analysis of your legal issue",
+    list: ["The search engine enables you"],
   },
   {
-    question: "Why should i choose Shwra lawyer?",
-    answer: "Why should i choose Shwra lawyer? Answer",
+    question: "Can I request a contract tailored to my business activity?",
+    answer: "Yes, the contract drafting service allows",
   },
   {
-    question: "What is the cost the legal services?",
-    answer: "What is the cost the legal services? Answer",
+    question: "How are contracts reviewed using artificial intelligence?",
+    answer: "We analyze the contract clauses to",
   },
   {
-    question: "What are the Available payment Methods in Shwra?",
-    answer: "What are the Available payment Methods in Shwra? Answer",
+    question: "Can my case be analyzed and the expected judgment estimated?",
+    answer: "Yes, through the Case Study and Analysis service",
   },
   {
-    question: "Is it possible to pay for legal services in installments?",
-    answer: "Is it possible to pay for legal services in installments? Answer",
+    question: "Can any legal document be translated into any language I want?",
+    answer:
+      "Yes, you can translate any legal document into the language of your choice",
   },
   {
-    question: "How should I prepare for the consultation?",
-    answer: "How should I prepare for the consultation? Answer",
+    question:
+      "Can I request the drafting of legal documents such as memorandums and pleadings?",
+    answer:
+      "Yes, we prepare professional legal documents including memorandums",
   },
   {
-    question: "Where is the Shwra office located?",
-    answer: "Where is the Shwra office located? Answer",
+    question:
+      "What is the difference between contract review and legal document review?",
+    answer: "Contract review focuses on the clauses",
   },
   {
-    question: "Are Shwra lawyers licensed?",
-    answer: "Are Shwra lawyers licensed? Answer",
+    question: "How does Shura help me manage my work as a lawyer?",
+    answer:
+      "We provide an intelligent management system for law firms that includes:",
+    list: [
+      "Tracking cases and appointments from a single platform",
+      "A notification system",
+      "Automated performance reports",
+      "Smart file organization classification",
+      "A system for task assignment",
+    ],
   },
   {
-    question: "How will I be updated on the status of my case?",
-    answer: "How will I be updated on the status of my case? Answer",
+    question: "Are Shura's services compliant with Saudi regulations?",
+    answer: "All Shura services are",
   },
-  // {
-  //     question:'Can I contact the lawyer directly after the consultation?',
-  //     answer:'Can I contact the lawyer directly after the consultation? Answer'
-  // }
+  {
+    question: "Can I customize the service according to my needs?",
+    answer: "Yes, many of Shura’s services—especially",
+  },
 ];
