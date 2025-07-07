@@ -3,10 +3,10 @@ import React from "react";
 import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 interface TextFieldProps {
-  name: string;
-  register: UseFormRegister<any>;
+  name: keyof ContactFormData;
+  register: UseFormRegister<ContactFormData>;
   placeholder: string;
-  errors: FieldErrors;
+  errors: FieldErrors<ContactFormData>;
   textarea?: boolean;
   label?: string;
   required?: boolean;
@@ -72,3 +72,11 @@ const TextField: React.FC<TextFieldProps> = ({
 };
 
 export default TextField;
+interface ContactFormData {
+  first_name: string;
+  last_name: string;
+  email: string;
+  phone: string;
+  topic: string;
+  help: string;
+}

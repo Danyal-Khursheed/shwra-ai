@@ -6,10 +6,10 @@ import { FieldErrors, UseFormRegister } from "react-hook-form";
 import CountryDropdown from "./Country";
 
 interface TextFieldProps {
-  name: string;
-  register: UseFormRegister<any>;
+  name: keyof ContactFormData;
+  register: UseFormRegister<ContactFormData>;
   placeholder: string;
-  errors: FieldErrors;
+  errors: FieldErrors<ContactFormData>;
   phonenumber?: boolean;
   email?: boolean;
   label?: boolean;
@@ -38,8 +38,8 @@ const PhoneNumber: React.FC<TextFieldProps> = ({
 
       {phonenumber ? (
         <div
-          className={` flex items-center  bg-gray-100 px-4 py-2 rounded-md ${
-            errors[name] ? "border border-red-500" : "border border-gray-200"
+          className={` flex items-center  bg-gray-100 px-4 py-2 h-14 rounded-md ${
+            errors[name] ? " border-red-500" : " border-gray-200"
           }`}
         >
           <CountryDropdown />
@@ -69,7 +69,7 @@ const PhoneNumber: React.FC<TextFieldProps> = ({
               input.value = input.value.trimStart();
             }
           }}
-          className={`w-full border p-4 rounded-md ${
+          className={`w-full bg-gray-100 p-4 rounded-md ${
             errors[name]
               ? "text-red-500 border-red-500"
               : "text-black border-gray-300"

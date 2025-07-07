@@ -4,11 +4,11 @@ import TextField from "./TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useTranslations } from "use-intl";
 import PhoneNumber from "./PhoneNumber";
+import axios from "axios";
 
 const Form = () => {
   const {
     register,
-
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<ContactFormData>({
@@ -17,8 +17,17 @@ const Form = () => {
 
   const t = useTranslations();
 
-  const onSubmit: SubmitHandler<ContactFormData> = (data) => {
-    console.log("Form submitted with data:", data);
+  const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
+    console.log("Form submitted with:", data); // 👈 Confirm it's triggering
+    try {
+      const response = await axios.post(
+        "https://your-backend-server.com/api/users",
+        data
+      );
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error("POST error:", error);
+    }
   };
 
   return (
@@ -30,8 +39,8 @@ const Form = () => {
       <div className="flex md:flex-row flex-col gap-4">
         <div className="md:w-1/2 w-full">
           <TextField
-            label={"first_name"}
-            name={"first name"}
+            label={"first name"}
+            name={"first_name"}
             register={register}
             required
             placeholder={t("enter first name")}
@@ -42,8 +51,8 @@ const Form = () => {
 
         <div className="md:w-1/2 w-full">
           <TextField
-            label={"last_name"}
-            name={"last name"}
+            label={"last name"}
+            name={"last_name"}
             register={register}
             required
             placeholder={t("enter last name")}
@@ -56,14 +65,13 @@ const Form = () => {
       {/* Email + Phone */}
       <div className="flex md:flex-row flex-col gap-4">
         <div className="md:w-1/2 w-full">
-          <TextField
-            label={"email"}
+          <PhoneNumber
             name={"email"}
             register={register}
             required
             placeholder={t("enter your email")}
             errors={errors}
-            minLength={5}
+            email
           />
         </div>
 

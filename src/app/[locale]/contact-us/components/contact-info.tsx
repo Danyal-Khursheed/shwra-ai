@@ -65,7 +65,7 @@ const ContactInfo = () => {
         {contactItems.map((item, index) => (
           <div
             key={index}
-            className="flex items-center justify-center gap-2 text-sm text-gray-900 font-medium"
+            className="flex items-center  md:justify-center justify-start gap-2 text-sm text-gray-900 font-medium"
           >
             {item.icon}
             <div className="flex flex-col items-start relative">
