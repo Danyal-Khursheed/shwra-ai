@@ -3,13 +3,17 @@ import React from "react";
 import TextField from "./TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useLocale, useTranslations } from "use-intl";
+
 import PhoneNumber from "./PhoneNumber";
 import axios from "axios";
 import toast from "react-hot-toast";
+
 const Form = () => {
   const locale = useLocale();
+
   const {
     register,
+
     reset,
     handleSubmit,
     formState: { errors, isValid },
@@ -23,8 +27,9 @@ const Form = () => {
       phoneNumber: data?.phone,
       email: data?.email,
       detail: data?.help,
-      type: "AIDashboardFeedback",
+      type: data?.topic,
     };
+
     try {
       const response = await axios.post(
         "https://shwraapidevops.azurewebsites.net/api/WebMessages",
@@ -48,7 +53,7 @@ const Form = () => {
           locale === "en" ? "Unknown issue occuried" : "حدثت مشكلة غير معروفة"
         );
       }
-    } catch {
+    } catch (error) {
       toast.error(
         locale === "en" ? "Unknown issue occuried" : "حدثت مشكلة غير معروفة"
       );

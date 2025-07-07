@@ -74,24 +74,46 @@ const Hero = () => {
         >
           {t("Leverage the power of artificial intelligence")}
         </motion.p>
-        <motion.div
-          variants={slideIn(50, 0, { delay: 1.0, duration: 0.6 })}
-          initial="initial"
-          animate="animate"
-          className="w-full flex justify-center"
-        >
-          <a
-            href="https://dev-musheer-ai.netlify.app/ar/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:w-sm w-[80%] p-3 rounded-xl mt-10 cursor-pointer md:font-semibold text-center"
-            style={{
-              background: "linear-gradient(to right, #EBDFDE, #BFA7A4)",
-            }}
+        <div className="flex flex-row gap-7">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-full flex justify-center"
           >
-            {t("start now")}
-          </a>
-        </motion.div>
+            <a
+              href="https://dev-musheer-ai.netlify.app/ar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:w-sm w-[80%] p-3 rounded-xl mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
+            >
+              {t("start now")}
+            </a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-full flex justify-center"
+          >
+            <a
+              href="https://dev-musheer-ai.netlify.app/ar/demo/detailsForm"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:w-sm w-[80%] p-3 rounded-xl mt-10 cursor-pointer md:font-semibold text-center transition-all duration-300"
+              style={{
+                background: "linear-gradient(to right, #EBDFDE, #BFA7A4)",
+              }}
+            >
+              {t("demo now")}
+            </a>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
