@@ -1,7 +1,7 @@
 "use client";
 import React, { FC } from "react";
 import Banner from "../banner/Banner";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Images } from "../../../public/assets/Images";
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 interface cardinterface {
   title: string;
   description: string;
+  descriptionEn: string;
 }
 
 const State = () => {
@@ -92,9 +93,14 @@ const State = () => {
           </div>
         </div>
         <div className="w-full md:p-12 mt-8">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-8 mx-2">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 mx-2">
             {statsData.map((el: cardinterface, index: number) => (
-              <Card key={index} title={el.title} description={el.description} />
+              <Card
+                key={index}
+                title={el.title}
+                description={el.description}
+                descriptionEn={el.descriptionEn}
+              />
             ))}
           </div>
         </div>
@@ -105,7 +111,8 @@ const State = () => {
 
 export default State;
 
-const Card: FC<cardinterface> = ({ title, description }) => {
+const Card: FC<cardinterface> = ({ title, description, descriptionEn }) => {
+  const locale = useLocale();
   const number = parseInt(title.replace(/\D/g, ""), 10);
   const prefix = title.includes("+") ? "+" : "";
   const suffix = title.includes("%") ? "%" : "";
@@ -116,9 +123,9 @@ const Card: FC<cardinterface> = ({ title, description }) => {
     <>
       <div
         ref={countRef}
-        className="bg-primary-ai-light border border-[#DCCFCC] text-black rounded-xl flex flex-col p-4 justify-center items-center h-40 md:gap-6 gap-2"
+        className="bg-[#F8F6F6] border border-[#DCCFCC] text-black rounded-xl flex flex-col p-4 justify-center items-center h-40 md:gap-6 gap-2"
       >
-        <h1 className="md:text-[34px] text-[26px] font-semibold">
+        <h1 className="md:text-[34px] text-[26px]" dir="ltr">
           {isInView ? (
             <CountUp
               end={number}
@@ -130,7 +137,9 @@ const Card: FC<cardinterface> = ({ title, description }) => {
             `${prefix}0${suffix}`
           )}
         </h1>
-        <p className="text-center md:text-[14px] text-[12px]">{description}</p>
+        <p className="text-center md:text-[14px] text-[12px]">
+          {locale === "ar" ? description : descriptionEn}
+        </p>
       </div>
     </>
   );
@@ -140,23 +149,35 @@ const statsData = [
   {
     title: "+66%",
     description:
-      "من الشركات يؤكدون على زيادة العملاء بعد استخدام الذكاء الاصطناعي",
+      "من الشركات يؤكدون على زيادة العملاء بعدك استخدام الذكاد الاصطناعي",
+    descriptionEn:
+      "Companies confirm an increase in customers after using artificial intelligence",
   },
   {
     title: "+65%",
-    description: "من العملاء بفضلون الشركات التي تستخدم الذكاء الاصطناعي",
+    description: "من العملاء يفضلون الشركات التي تستخدم الذكاد الاصطناعي",
+    descriptionEn:
+      "Customers prefer companies that use artificial intelligence",
   },
   {
     title: "+80%",
-    description: "توفير الوقت المخصص سابقًا لمراجعة العقود سابقًا",
+    description: "توفير للوقت المخصص سابقا لمراجعة العقود سابقا",
+    descriptionEn: "Saving time previously allocated to reviewing contracts",
   },
   {
     title: "+20%",
     description: "توفير في تكاليف الخدمات القانونية",
+    descriptionEn: "Savings on legal services costs",
   },
-
   {
     title: "+40%",
     description: "توفير للوقت الذي كان يهدر في البحث اليدوي",
+    descriptionEn: "Save time wasted on manual searching",
+  },
+  {
+    title: "+79%",
+    description:
+      "من المحامين استخدموا الذكاء الاصطناعي سنة 2024، بزيادة كبيرة عن 2023.",
+    descriptionEn: "Lawyers used AI in 2024, a significant increase from 2023.",
   },
 ];

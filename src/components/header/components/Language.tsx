@@ -36,6 +36,7 @@ const Language: FC<LanguageInterface> = ({ textBlack }) => {
             <button
               onClick={changeLocale}
               className="p-3 bg-primary-golden rounded-[50px] text-black flex flex-row gap-2"
+              disabled
             >
               {locale === "en" ? "AR" : "EN"}
             </button>
@@ -46,6 +47,7 @@ const Language: FC<LanguageInterface> = ({ textBlack }) => {
           <button
             onClick={changeLocale}
             className="p-2  rounded flex cursor-pointer flex-row gap-2"
+            disabled
           >
             <Image
               className="hidden md:block mt-1"

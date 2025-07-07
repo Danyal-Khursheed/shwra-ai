@@ -28,8 +28,8 @@ function HeadingTitle({
       className={`text-center flex flex-col gap-0 text-black md:gap-0 items-center mt-6`}
     >
       {text && (
-        <div className="inline-block rounded-full bg-primary-ai-light px-6 py-1">
-          <p className="font-madaniArabic text-sm font-normal text-primary-ai">
+        <div className="inline-block rounded-full bg-primary-ai-light px-4 py-1">
+          <p className="font-madaniArabic text-sm font-normal bg-[#EEE8E7]  rounded-full text-primary-ai">
             {text}
           </p>
         </div>

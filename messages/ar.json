@@ -3,7 +3,7 @@
   "logout": "تسجيل الخروج",
   "login": "تسجيل الدخول",
   "shwra business": "shwra business",
-  "Where we support the law with the power of artificial intelligence": "حيث ندعم القانون بقوة الذكاء الاصطناعي",
+  "Where we support the law with the power of artificial intelligence": "أول منصة قانونية بالذكاء الاصطناعي في المملكة",
   "Revolutionizing legal services through artificial intelligence": "ثورة في تسهيل الخدمات القانونية من خلال الذكاء الاصطناعي",
   "Leverage the power of artificial intelligence": "استثمر قوة الذكاء الاصطناعي لتسهيل خدماتك القانونية وتقديم رؤى قابلة للتنفيذ، تقودك نحو آفاق جديدة من النجاح.",
   "start now": "ابدأ الآن",
@@ -125,7 +125,7 @@
   "Phone": "رقم الجوال",
   "Copied": "تم النسخ",
   "Contact us": "تواصل معنا",
-  "contact description": "تواصل نحن هنا للإجابة على جميع استفساراتك وتقديم الدعم الذي تحتاجه. لا تتردد في التواصل معنا لأي مساعدة أو توضيح حول خدمات منصة شورى للذكاء الاصطناعي.معنا",
+  "contact description": "نحن هنا للإجابة على جميع استفساراتك وتقديم الدعم الذي تحتاجه. لا تتردد في التواصل معنا لأي مساعدة أو توضيح حول خدمات منصة شورى للذكاء الاصطناعي.",
   "enter first name": "ادخل الاسم الاول",
   "first_name": "الاسم الاول",
   "last_name": "الاسم الاخير ",
@@ -140,6 +140,7 @@
   "phone": "رقم الجوال",
   "error": "الحقل مطلوب",
   "Submit": "إرسال",
+  "Demo": "عرض توضيحي",
   "Can I summarize a complex legal document": "هل يمكنني تلخيص مستند قانوني معقد؟",
   "the legal document summarization service": "نعم، خدمة تلخيص المستندات القانونية توفّر لك خلاصة دقيقة للمحتوى القانوني المعقد بطريقة مبسّطة تساعد في اتخاذ القرار وفهم النصوص القانونية بسهولة."
 }

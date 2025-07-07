@@ -6,10 +6,12 @@ import { useLocale, useTranslations } from "next-intl";
 import { Images } from "../../../public/assets/Images";
 import { motion } from "framer-motion";
 import { slideIn } from "@/animations";
+import { usePathname } from "next/navigation";
 
 function Footer() {
   const translate = useTranslations("");
   const language = useLocale();
+  const pathname = usePathname();
   type LinkItem = {
     id: number;
     title: string;
@@ -18,10 +20,14 @@ function Footer() {
 
   const Links = [
     { id: 1, title: translate("Home"), href: "/" },
-    { id: 2, title: translate("About Shwra"), href: "/board-of-directors" },
-    { id: 4, title: translate("Contact Us"), href: "/faqs" },
+    { id: 2, title: translate("About Shwra"), href: "/boards-of-directors" },
+    { id: 4, title: translate("Contact Us"), href: "/contact-us" },
     { id: 4, title: translate("FAQs"), href: "/faqs" },
   ];
+
+  const isHomePage =
+    pathname === `/${language}` || pathname === `/${language}/`;
+  const buttonText = isHomePage ? translate("start now") : translate("Demo");
 
   return (
     <section className="font-madaniArabicMedium bg-primary-ai-light py-10 mt-16 px-4 md:px-0  text-black">
@@ -69,7 +75,7 @@ function Footer() {
                 rel="noopener noreferrer"
                 className="md:w-sm w-[80%] p-3 rounded-lg mt-10 cursor-pointer md:font-semibold text-center bg-primary text-white"
               >
-                {translate("start now")}
+                {buttonText}
               </a>
             </motion.div>
           </div>

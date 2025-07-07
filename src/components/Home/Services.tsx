@@ -55,6 +55,11 @@ const Services = () => {
                 <li key={idx}>{point}</li>
               ))}
             </ul>
+            {selectedService?.endDescription && (
+              <div className="text-gray-500 md:text-[16px] text-[14px]">
+                {selectedService.endDescription}
+              </div>
+            )}
           </motion.div>
 
           {/* Image Content */}
@@ -65,7 +70,7 @@ const Services = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="md:block hidden w-full h-full rounded-lg"
+              className="md:block hidden w-full rounded-lg shadow-xl"
             >
               <Image
                 src={selectedService.image}
@@ -114,7 +119,7 @@ const ServiceData = [
       "It thoroughly analyzes legal data to provide reliable legal consultations.",
       "It keeps up with continuous updates in the legal landscape of the Kingdom of Saudi Arabia, ensuring users receive the most up-to-date legal information as soon as it's released.",
     ],
-    image: Images.musheer_service,
+    image: Images.musheer_interface,
     responsiveImage: Images.musheer_interface2,
   },
   {
@@ -307,6 +312,10 @@ const ServiceData = [
       "Intelligent case file management: storing, categorizing, archiving, and quick retrieval.",
       "A daily task tracking system for lawyers or team members, with customization and assignment options.",
     ],
+    endDescription:
+      "تم تصميم هذه الأداة لتوفير وقت المحامي، وتحسين الإنتاجية، وضمان جودة المتابعة القانونية بأعلى المعايير.",
+    endDescriptionEn:
+      "This tool is designed to save attorneys time, improve productivity, and ensure the highest quality legal follow-up.",
     image: Images.saas_service,
     responsiveImage: Images.saas,
   },

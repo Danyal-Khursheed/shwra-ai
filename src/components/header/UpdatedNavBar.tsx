@@ -76,17 +76,17 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
             whileInView={"animate"}
             viewport={{ once: isMobile ? false : true }}
           >
-            <Language />
+            <Language textBlack={textBlack} />
           </motion.div>
         </div>
       </div>
       {/* Mobile Header */}
       <div
         id="updated-navbar"
-        className={`flex  lg:hidden items-center justify-between w-full px-4 py-3 responsive-Header-color  top-0  left-0 z-20`}
+        className={`flex lg:hidden items-center justify-between w-full px-4 py-3 responsive-Header-color  top-0  left-0 z-20`}
       >
         <Image
-          src={Images.MobileShwraLogo}
+          src={textBlack ? Images.shwra_ai : Images.MobileShwraLogo}
           alt="ShwraLogo"
           width={170}
           height={40}
@@ -97,7 +97,7 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
           </div>
           <button onClick={toggleMenu} className="">
             <Image
-              src={Images.ToggelButton}
+              src={textBlack ? Images.toggle : Images.ToggelButton}
               alt="toggle"
               width={30}
               height={30}
@@ -108,21 +108,23 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
 
       {/* Sliding Sidebar */}
       <div
-        className={`fixed bg-primary top-0 left-0 h-full w-64  shadow-lg transform ${
+        className={`fixed ${
+          textBlack ? "bg-white" : "bg-primary"
+        }  top-0 left-0 h-full w-64  shadow-lg transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out z-40`}
       >
         <div className="flex items-center justify-between px-4 py-3">
           <button onClick={toggleMenu} className="text-darkBlue">
             <Image
-              src={Images.ToggelButton}
+              src={textBlack ? Images.toggle : Images.ToggelButton}
               alt="toggle"
               width={30}
               height={30}
             />
           </button>
           <Image
-            src={Images.ShwraLogo}
+            src={textBlack ? Images.shwra_black : Images.ShwraLogo}
             alt="ShwraLogo"
             width={47}
             height={40}

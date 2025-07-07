@@ -31,7 +31,7 @@ const PhoneNumber: React.FC<TextFieldProps> = ({
   return (
     <div className="flex flex-col gap-2 ">
       {label && (
-        <label className="text-sm font-medium text-gray-700 flex gap-1 items-center">
+        <label className="text-sm font-semibold text-gray-700 flex gap-1 items-center">
           {t(name)} {required && <span className="text-red-500">*</span>}
         </label>
       )}

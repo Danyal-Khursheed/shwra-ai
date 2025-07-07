@@ -63,7 +63,7 @@ const Banner = () => {
         className="hidden md:flex justify-end items-center w-[40%] h-full"
       >
         <Image
-          src={Images?.musheer_interface}
+          src={Images?.musheer_interface_border}
           alt="Musheer Interface"
           width={400}
           height={400}
