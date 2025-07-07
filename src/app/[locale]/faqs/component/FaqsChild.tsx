@@ -43,7 +43,7 @@ const FaqChild: FC<FaqInterface> = () => {
             style={{
               lineHeight: "30px",
             }}
-            className="text-center md:text-center md:px-12 text-[var(--textColor)] text-[16px] md:text-[20px] mt-6  "
+            className="text-center md:text-center text-[#465467] md:px-12 text-[16px] md:text-[20px] mt-6"
           >
             {translate("Faq page text")}
           </motion.p>
