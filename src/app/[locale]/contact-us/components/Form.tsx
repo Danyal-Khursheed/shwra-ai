@@ -2,34 +2,58 @@
 import React from "react";
 import TextField from "./TextField";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useTranslations } from "use-intl";
+import { useLocale, useTranslations } from "use-intl";
 import PhoneNumber from "./PhoneNumber";
 import axios from "axios";
-
+import toast from "react-hot-toast";
 const Form = () => {
+  const locale = useLocale();
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<ContactFormData>({
     mode: "onChange",
   });
-
   const t = useTranslations();
-
   const onSubmit: SubmitHandler<ContactFormData> = async (data) => {
-    console.log("Form submitted with:", data); // 👈 Confirm it's triggering
+    const userDetails = {
+      name: data?.first_name + " " + data?.last_name,
+      phoneNumber: data?.phone,
+      email: data?.email,
+      detail: data?.help,
+      type: data?.topic,
+    };
     try {
       const response = await axios.post(
-        "https://your-backend-server.com/api/users",
-        data
+        "https://shwraapidevops.azurewebsites.net/api/WebMessages",
+        userDetails,
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+          },
+        }
       );
-      console.log("Response:", response.data);
-    } catch (error) {
-      console.error("POST error:", error);
+      if (response.data?.status === true) {
+        toast.success(
+          locale === "en"
+            ? "Details send successfully"
+            : "تم إرسال التفاصيل بنجاح"
+        );
+        reset();
+      } else {
+        toast.error(
+          locale === "en" ? "Unknown issue occuried" : "حدثت مشكلة غير معروفة"
+        );
+      }
+    } catch {
+      toast.error(
+        locale === "en" ? "Unknown issue occuried" : "حدثت مشكلة غير معروفة"
+      );
     }
   };
-
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
@@ -48,7 +72,6 @@ const Form = () => {
             minLength={3}
           />
         </div>
-
         <div className="md:w-1/2 w-full">
           <TextField
             label={"last name"}
@@ -61,7 +84,6 @@ const Form = () => {
           />
         </div>
       </div>
-
       {/* Email + Phone */}
       <div className="flex md:flex-row flex-col gap-4">
         <div className="md:w-1/2 w-full">
@@ -74,7 +96,6 @@ const Form = () => {
             email
           />
         </div>
-
         <div className="md:w-1/2 w-full">
           <PhoneNumber
             name={"phone"}
@@ -86,7 +107,6 @@ const Form = () => {
           />
         </div>
       </div>
-
       {/* Topic */}
       <TextField
         label={"topic"}
@@ -96,7 +116,6 @@ const Form = () => {
         errors={errors}
         minLength={3}
       />
-
       {/* Help Textarea */}
       <TextField
         label={"help"}
@@ -109,7 +128,6 @@ const Form = () => {
         minLength={10}
         textarea
       />
-
       {/* Submit Button */}
       <button
         type="submit"
@@ -125,9 +143,7 @@ const Form = () => {
     </form>
   );
 };
-
 export default Form;
-
 interface ContactFormData {
   first_name: string;
   last_name: string;

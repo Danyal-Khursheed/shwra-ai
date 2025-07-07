@@ -12,6 +12,7 @@ import {
   SiteTitleArabic,
   SiteTitleEnglish,
 } from "@/constant/meta_data";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,6 +64,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
+          <Toaster position="top-center" />
           {children}
           <Footer />
         </NextIntlClientProvider>
