@@ -23,7 +23,7 @@ const Accordion: React.FC<AccordionProps> = ({
   return (
     <div onClick={onToggle} className="px-0">
       <div className="flex justify-between items-center cursor-pointer">
-        <p className="md:text-[18px] max-w-[80%]">{question}</p>
+        <p className="md:text-[18px] max-w-[80%] font-semibold">{question}</p>
         {isOpen ? (
           <FiMinusCircle
             className="w-[24px] h-[26px] cursor-pointer"

@@ -57,7 +57,7 @@
   "UniversityofStirlingdescription": "University of Stirling, Britain.",
   "ComputerEngineeringFahddescription": "Computer Engineering Fahd University of Petroleum and minerals, Saudi Arabia.",
   "FAQ": "FAQ",
-  "Faq page text": "In this section, you will find answers to the most frequently asked questions about our services and how to use the Shwra app. We aim to provide the necessary support and clarify all inquiries to ensure a distinctive and smooth user experience.",
+  "Faq page text": "Here you will find answers to the most frequently asked questions about our services and how to use the Shura AI platform. We aim to provide the necessary support and clarify all inquiries to ensure a smooth and exceptional user experience.",
   "Frequently Asked Questions (FAQs)": "Frequently Asked Questions (FAQs):",
   "Frequently Asked Questions (FAQs) 2": "Frequently Asked Questions (FAQs):",
   "How can we Help you": "How can we Help you",
@@ -139,5 +139,7 @@
   "Phone Number placeholder": "Phone Number placeholder",
   "phone": "Phone Number",
   "error": "Field is requried",
-  "Submit": "Submit"
+  "Submit": "Submit",
+  "Can I summarize a complex legal document": "Can I summarize a complex legal document?",
+  "the legal document summarization service": "Yes, the legal document summarization service provides you with an accurate summary of complex legal content in a simplified manner that helps in decision-making and understanding legal texts with ease."
 }

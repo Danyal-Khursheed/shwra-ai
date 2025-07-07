@@ -43,6 +43,10 @@ export const faqsData = [
     answer: "Contract review focuses on the clauses",
   },
   {
+    question: "Can I summarize a complex legal document",
+    answer: "the legal document summarization service",
+  },
+  {
     question: "How does Shura help me manage my work as a lawyer?",
     answer:
       "We provide an intelligent management system for law firms that includes:",
