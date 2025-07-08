@@ -72,7 +72,7 @@ const TeamMemberDesign = ({
 
       {/* Description */}
       <div className="flex-1 mt-4 mb-4">
-        <p className="text-[var(--textColor)] text-[16px] md:text-[14px] lg:text-[16px] text-justify">
+        <p className="text-[#465467] text-[16px] md:text-[14px] lg:text-[16px] text-justify">
           {description}
         </p>
       </div>
@@ -84,18 +84,18 @@ const TeamMemberDesign = ({
         <div className="flex flex-col gap-2">
           <p className="flex items-start gap-3 text-sm font-semibold lg:text-[14px]">
             <span className="flex-shrink-0">{degrees?.degreeName1}</span>
-            <span className="flex-grow font-normal text-xs lg:text-[14px]">
+            <span className="flex-grow font-normal text-xs lg:text-[14px] text-[#163038]">
               {translate(degrees?.degreeLocation)}
             </span>
           </p>
-          <p className="flex items-start gap-3 text-sm font-semibold lg:text-[14px]">
+          <p className="flex items-start gap-3 text-sm font-semibold lg:text-[14px] text-[#163038]">
             <span className="flex-shrink-0">{degrees?.degreeName2}</span>
             <span className="flex-grow font-normal text-xs lg:text-[14px]">
               {translate(degrees?.degreeLocation2)}
             </span>
           </p>
           {degrees?.degreeLocation3 && (
-            <p className="flex items-start gap-3 text-sm font-semibold lg:text-[14px]">
+            <p className="flex items-start gap-3 text-sm font-semibold lg:text-[14px] text-[#163038]">
               <span className="flex-shrink-0">{degrees?.degreeName3}</span>
               <span className="flex-grow font-normal text-xs lg:text-[14px]">
                 {translate(degrees?.degreeLocation3)}

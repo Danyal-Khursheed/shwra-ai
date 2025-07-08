@@ -117,7 +117,7 @@ const AboutUsChild = () => {
           initial="initial"
           whileInView={"animate"}
           viewport={{ once: true }}
-          className="text-center leading-[25px] md:leading-[30px] md:px-12 text-[var(--textColor)] text-[14px] md:text-[20px] ms-[25px] me-[25px] mb-[15px] md:mb-0 md:me-0 md:ms-0 mt-6"
+          className="text-center text-[#475467] leading-[25px] md:leading-[30px] md:px-12 text-[14px] md:text-[20px] ms-[25px] me-[25px] mb-[15px] md:mb-0 md:me-0 md:ms-0 mt-6"
         >
           {translate("Shwra Platform Text")}
         </motion.p>
