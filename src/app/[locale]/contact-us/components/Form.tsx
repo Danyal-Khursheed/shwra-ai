@@ -54,6 +54,7 @@ const Form = () => {
         );
       }
     } catch (error) {
+      console.log(error);
       toast.error(
         locale === "en" ? "Unknown issue occuried" : "حدثت مشكلة غير معروفة"
       );
