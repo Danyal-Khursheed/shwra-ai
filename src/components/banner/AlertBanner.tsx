@@ -1,12 +1,9 @@
-import React, { FC } from "react";
+import React from "react";
 
 import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 
-import { useTranslations } from "next-intl";
-
 const AlertBanner = () => {
-  const t = useTranslations();
   return (
     <div
       className="relative flex flex-row justify-center items-center md:max-w-[85%] max-w-[95%] mx-auto md:h-40 h-60 rounded-xl overflow-hidden"

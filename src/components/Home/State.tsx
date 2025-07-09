@@ -1,6 +1,5 @@
 "use client";
 import React, { FC } from "react";
-import Banner from "../banner/Banner";
 import { useLocale, useTranslations } from "next-intl";
 import { Images } from "../../../public/assets/Images";
 import Image from "next/image";
@@ -9,7 +8,6 @@ import { fadeIn, slideIn } from "@/animations";
 import CountUp from "react-countup";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { useRouter } from "next/navigation";
 import AlertBanner from "../banner/AlertBanner";
 
 interface cardinterface {
@@ -20,7 +18,7 @@ interface cardinterface {
 
 const State = () => {
   const t = useTranslations();
-  const router = useRouter();
+
   return (
     <div>
       <AlertBanner />

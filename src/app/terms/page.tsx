@@ -2,7 +2,6 @@
 
 import React, { Suspense, useEffect, useState } from "react";
 import Image from "next/image";
-import English from "./component/english";
 import Arabic from "./component/arabic";
 import { SiteTitleArabic, SiteTitleEnglish } from "@/constant/meta_data";
 import { Images } from "../../../public/assets/Images";
