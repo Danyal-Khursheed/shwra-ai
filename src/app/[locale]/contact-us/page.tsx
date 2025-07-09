@@ -7,7 +7,7 @@ import Form from "./components/Form";
 const Page = () => {
   const translate = useTranslations();
   return (
-    <div className="flex flex-col gap-10">
+    <div className="flex flex-col md:gap-10 gap-3">
       <HeadingTitle
         text={translate("Contact us")}
         heading={translate("Contact us")}

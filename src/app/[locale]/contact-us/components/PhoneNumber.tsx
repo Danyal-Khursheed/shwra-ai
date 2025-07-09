@@ -38,6 +38,7 @@ const PhoneNumber: React.FC<TextFieldProps> = ({
 
       {phonenumber ? (
         <div
+          dir="ltr"
           className={` flex items-center  bg-gray-100 px-4 py-2 h-14 rounded-md ${
             errors[name] ? " border-red-500" : " border-gray-200"
           }`}
@@ -56,7 +57,7 @@ const PhoneNumber: React.FC<TextFieldProps> = ({
                 ""
               );
             }}
-            className="w-f me-8 bg-transparent outline-none text-gray-700 placeholder:text-gray-400 text-end"
+            className="w-f ms-4  outline-none text-gray-700 placeholder:text-gray-400 text-start"
             {...register(name)}
           />
         </div>

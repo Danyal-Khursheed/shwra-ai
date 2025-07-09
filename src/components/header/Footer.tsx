@@ -76,7 +76,7 @@ function Footer() {
               className="w-full flex justify-center"
             >
               <a
-                href="https://dev-musheer-ai.netlify.app/ar/"
+                href="https://portal.shwra.ai/ar/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="md:w-sm w-[80%] p-3 rounded-lg mt-10 cursor-pointer md:font-semibold text-center bg-primary text-white"

@@ -6,7 +6,7 @@ import { Images } from "../../../public/assets/Images";
 const AlertBanner = () => {
   return (
     <div
-      className="relative flex flex-row justify-center items-center md:max-w-[85%] max-w-[95%] mx-auto md:h-40 h-60 rounded-xl overflow-hidden"
+      className="relative flex flex-row justify-center items-center md:max-w-[85%] max-w-[95%] mx-auto md:h-40 h-68 rounded-xl overflow-hidden"
       style={{
         background: "linear-gradient(to right, #1e3a46, #3b3f4a)",
       }}
@@ -59,12 +59,17 @@ const AlertBanner = () => {
             <span className="md:text-[16px] text-[14px]">محتوى</span>
             <span className="md:text-[16px] text-[14px]">تقوم</span>
             <span className="md:text-[16px] text-[14px]">بإنشائه</span>
-            <span className="md:text-[16px] text-[14px]">على</span>
-            <span className="md:text-[16px] text-[14px]">المنصة</span>
-            <span className="md:text-[16px] text-[14px]">إلا</span>
-            <span className="md:text-[16px] text-[14px]">إذا</span>
-            <span className="md:text-[16px] text-[14px]">بحفظه</span>
-            <span className="md:text-[16px] text-[14px]">كمسودة.</span>
+            <span className="md:text-[16px] text-[14px]">إلا</span>{" "}
+            <span className="md:text-[16px] text-[14px]">إذا</span>{" "}
+            <span className="md:text-[16px] text-[14px]">قمت</span>{" "}
+            <span className="md:text-[16px] text-[14px]">بحفظه</span>{" "}
+            <span className="md:text-[16px] text-[14px]">كمسودة</span>{" "}
+            <span className="md:text-[16px] text-[14px]">ويمكنك</span>{" "}
+            <span className="md:text-[16px] text-[14px]">حذف</span>{" "}
+            <span className="md:text-[16px] text-[14px]">بياناتك</span>{" "}
+            <span className="md:text-[16px] text-[14px]">في</span>{" "}
+            <span className="md:text-[16px] text-[14px]">أي</span>{" "}
+            <span className="md:text-[16px] text-[14px]">وقت.</span>
             <span className="md:text-[16px] text-[14px]">كما</span>
             <span className="text-primary-ai md:text-[21px] text-[18px]">
               نؤكد

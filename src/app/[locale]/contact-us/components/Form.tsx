@@ -63,7 +63,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="md:max-w-[65%] max-w-[90%] mx-auto w-full flex flex-col gap-7 mt-16 pt-16 md:border-t border-gray-200"
+      className="md:max-w-[65%] max-w-[90%] mx-auto w-full flex flex-col gap-7 md:mt-16 md:pt-16 pt-10 md:border-t border-gray-200"
     >
       {/* Name Fields */}
       <div className="flex md:flex-row flex-col gap-4">
