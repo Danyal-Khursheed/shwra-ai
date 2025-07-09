@@ -10,6 +10,7 @@ import CountUp from "react-countup";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 import { useRouter } from "next/navigation";
+import AlertBanner from "../banner/AlertBanner";
 
 interface cardinterface {
   title: string;
@@ -22,13 +23,7 @@ const State = () => {
   const router = useRouter();
   return (
     <div>
-      <Banner
-        text={t("Among law firms that use artificial intelligence")}
-        boldText={"72%"}
-        buttonText={t("start now")}
-        Link="https://dev-musheer-ai.netlify.app/ar/"
-        onClick={() => router.push("https://dev-musheer-ai.netlify.app/ar/")}
-      />
+      <AlertBanner />
 
       <div className="flex md:flex-row flex-col w-full md:p-10 pt-10 ">
         <div className="w-full text-black  flex flex-col  relative ">

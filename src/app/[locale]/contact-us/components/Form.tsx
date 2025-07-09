@@ -32,7 +32,7 @@ const Form = () => {
 
     try {
       const response = await axios.post(
-        "https://shwraapidevops.azurewebsites.net/api/WebMessages",
+        "https://shwra-prod.azurewebsites.net/api/WebMessages",
         userDetails,
         {
           headers: {
