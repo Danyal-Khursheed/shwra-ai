@@ -84,7 +84,7 @@ const Hero = () => {
             className="w-full flex justify-center"
           >
             <a
-              href="https://dev-musheer-ai.netlify.app/ar/"
+              href="https://portal.shwra.ai/ar/"
               target="_blank"
               rel="noopener noreferrer"
               className="md:w-sm w-[80%] p-3 rounded-xl mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
@@ -102,7 +102,7 @@ const Hero = () => {
             className="w-full flex justify-center"
           >
             <a
-              href="https://dev-musheer-ai.netlify.app/ar/demo/detailsForm"
+              href="https://portal.shwra.ai/ar/demo/detailsForm"
               target="_blank"
               rel="noopener noreferrer"
               className="md:w-sm w-[80%] p-3 rounded-xl mt-10 cursor-pointer md:font-semibold text-center transition-all duration-300"
