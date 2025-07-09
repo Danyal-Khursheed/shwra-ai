@@ -117,10 +117,12 @@ const PackageCard: React.FC<PackageCardProps> = ({
       className={`md:w-full flex flex-col justify-between bg-white overflow-hidden rounded-xl min-h-[400px] p-8 my-4 w-[90%] shadow-md `}
     >
       <div className="flex  flex-col overflow-x-hidden gap-3">
-        <p className="font-[600] text-[23px] min-h-14">{items.name}</p>
-        <p className="text-[14px] text-[#667085] py-4  md:min-h-24 min-h-20">
-          {items.description}
-        </p>
+        <div className="flex flex-col">
+          <p className="font-[600] text-[23px] min-h-10">{items.name}</p>
+          <p className="text-[14px] text-[#667085] py-4   min-h-20">
+            {items.description}
+          </p>
+        </div>
 
         {true ? (
           <>

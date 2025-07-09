@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 
 const slides = [
-  Images.musheer_interface2,
+  Images.musheerServices,
   Images.search_engine,
   Images.summerization,
   Images.contract_review_interface,
