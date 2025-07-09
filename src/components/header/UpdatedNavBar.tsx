@@ -50,7 +50,7 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
         className={`hidden lg:flex  items-center  
             justify-between w-full  md:max-w-[80%] `}
       >
-        <div className=" flex flex-row gap-8">
+        <div className=" flex flex-row gap-12">
           <motion.div
             variants={slideIn(0, -10, { delay: 0 })}
             initial="initial"
@@ -69,7 +69,7 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
             <MenuMapping textBlack={textBlack} />
           )}
         </div>
-        <div className="flex flex-row gap-8">
+        {/* <div className="flex flex-row gap-8">
           <motion.div
             variants={slideIn(0, -10, { delay: 7 * 0.1 })}
             initial="initial"
@@ -78,7 +78,7 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
           >
             <Language textBlack={textBlack} />
           </motion.div>
-        </div>
+        </div> */}
       </div>
       {/* Mobile Header */}
       <div

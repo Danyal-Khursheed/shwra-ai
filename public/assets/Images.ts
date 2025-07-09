@@ -59,4 +59,14 @@ export const Images = {
   black_globe: "/assets/Icons/globe.svg",
   Avatargroup: "/assets/Icons/Avatargroup.svg",
   copy: "/assets/Icons/copy.svg",
+
+  caseStudyService: "/assets/services/caseStudy.png",
+  contractReviewService: "/assets/services/contractReview.png",
+  documentDraftingService: "/assets/services/documentDrafting.png",
+  documentReviewService: "/assets/services/documentReview.png",
+  documentReview2Service: "/assets/services/documentReview2.png",
+  legalSaasService: "/assets/services/legalSaas.png",
+  legalTransaltionService: "/assets/services/legalTransaltion.png",
+  legalSummarizationService: "/assets/services/legalSummarization.png",
+  searchEngineService: "/assets/services/search.png",
 };

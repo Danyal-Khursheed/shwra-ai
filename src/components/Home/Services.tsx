@@ -140,7 +140,7 @@ const ServiceData = [
       "Instant access to the latest laws and amendments to ensure up-to-date legal information aligned with the newest legal updates.",
       "Comprehensive coverage of laws, regulations, court rulings, and all legal information.",
     ],
-    image: Images.search_engine_service,
+    image: Images.searchEngineService,
     responsiveImage: Images.search_engine,
   },
   {
@@ -163,7 +163,7 @@ const ServiceData = [
       "Full compliance with Saudi laws, with automatic updates for any regulatory changes.",
       "Customizable contract drafting that includes all the details you need without complexity.",
     ],
-    image: Images.contract_drafting_service,
+    image: Images.contractReviewService,
     responsiveImage: Images.summerization,
   },
   {
@@ -186,7 +186,7 @@ const ServiceData = [
       "Review fully aligned with Saudi laws and regulations, automatically updated.",
       "Clear and simplified reports that support confident decision-making.",
     ],
-    image: Images.contract_review_service,
+    image: Images.contractReviewService,
     responsiveImage: Images.contract_review_interface,
   },
   {
@@ -207,7 +207,7 @@ const ServiceData = [
       "Clarification of the expected judgment based on the available data, offering a realistic estimate of the likely outcome with legal reasoning.",
       "Guidance to involved parties on the best possible actions to take based on the legal analysis.",
     ],
-    image: Images.case_study_service,
+    image: Images.caseStudyService,
     responsiveImage: Images.case_study,
   },
   {
@@ -218,7 +218,7 @@ const ServiceData = [
       "توفر شورى للذكاء الإصطناعي خدمة ترجمة قانونية دقيقة واحترافية للوثائق والمستندات القانونية، مع الالتزام بالمصطلحات القانونية الدقيقة والامتثال التام لأنظمة المملكة، مما يضمن دقة الترجمة وسلامة المعنى القانوني على جميع اللغات.",
     descriptionEn:
       "Shawra AI provides accurate and professional legal translation services for legal documents and contracts, strictly adhering to precise legal terminology and full compliance with Saudi regulations—ensuring translation accuracy and preserving the legal meaning across all languages.",
-    image: Images.translation_service,
+    image: Images.legalTransaltionService,
     responsiveImage: Images.translation,
   },
   {
@@ -241,7 +241,7 @@ const ServiceData = [
       "Ensuring compliance with Saudi laws and regulations, with automatic updates when needed.",
       "Customizing documents based on the type of entity (individuals – companies – government bodies).",
     ],
-    image: Images.document_drafting_service,
+    image: Images.documentDraftingService,
     responsiveImage: Images.drafting_doc,
   },
   {
@@ -264,7 +264,7 @@ const ServiceData = [
       "Verifying full compliance with Saudi regulations and recent amendments.",
       "Simplified review reports that help you make confident and informed decisions.",
     ],
-    image: Images.document_review_service,
+    image: Images.documentReview2Service,
     responsiveImage: Images.musheer_interface2,
   },
   {
@@ -287,7 +287,7 @@ const ServiceData = [
       "Fast turnaround to save time without compromising content accuracy.",
       "Clear and easy-to-understand summaries to help both legal professionals and non-specialists grasp legal documents effortlessly.",
     ],
-    image: Images.summerization_service,
+    image: Images.legalSummarizationService,
     responsiveImage: Images.summerization2,
   },
   {
@@ -316,7 +316,7 @@ const ServiceData = [
       "تم تصميم هذه الأداة لتوفير وقت المحامي، وتحسين الإنتاجية، وضمان جودة المتابعة القانونية بأعلى المعايير.",
     endDescriptionEn:
       "This tool is designed to save attorneys time, improve productivity, and ensure the highest quality legal follow-up.",
-    image: Images.saas_service,
+    image: Images.legalSaasService,
     responsiveImage: Images.saas,
   },
 ];
