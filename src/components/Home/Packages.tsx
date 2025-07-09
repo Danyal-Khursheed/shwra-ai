@@ -27,7 +27,8 @@ const Packages = () => {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        `https://shwraapidevops.azurewebsites.net/api/Subscription/GetAllPackages?NoOfUsers=0`,
+        `
+https://shwra-prod.azurewebsites.net/api/Subscription/GetAllPackages?NoOfUsers=0`,
         {
           headers: {
             "Accept-Language": locale === "en" ? "en-US" : "ar-SA",
@@ -105,13 +106,17 @@ const PackageCard: React.FC<PackageCardProps> = ({
   expandedCardIndex,
 }) => {
   const t = useTranslations();
+  const locale = useLocale();
+  const digitsCount = items.annualPackageAmount
+    ?.toString()
+    ?.replace(".", "")?.length;
 
   return (
     <div
       // style={{ boxShadow: "0px 5px 20px 0px #14142B14" }}
       className={`md:w-full flex flex-col justify-between bg-white overflow-hidden rounded-xl min-h-[400px] p-8 my-4 w-[90%] shadow-md `}
     >
-      <div className="flex flex-col overflow-x-hidden gap-3">
+      <div className="flex  flex-col overflow-x-hidden gap-3">
         <p className="font-[600] text-[23px] min-h-14">{items.name}</p>
         <p className="text-[14px] text-[#667085] py-4  md:min-h-24 min-h-20">
           {items.description}
@@ -120,12 +125,49 @@ const PackageCard: React.FC<PackageCardProps> = ({
         {true ? (
           <>
             <p className="text-[34px] font-bold flex flex-row justify-center items-center">
-              {items.annualPackageAmount}
-              <Image src={Images?.riyal} width={30} height={30} alt="" />
+              {items.annualPackageAmount / 2}
+              <Image
+                src={Images?.riyal}
+                width={30}
+                height={30}
+                alt="Riyal icon"
+              />
             </p>
-            <p className="text-center text-[11px] -mt-2">
-              غير شامل ضريبة القيمة المضافة
-            </p>
+
+            <div className="flex justify-center items-center w-full -mt-4">
+              <div className="relative">
+                <span className="text-[20px] flex flex-row text-[#667085] pe-1">
+                  {items.annualPackageAmount}
+                  <Image
+                    src={Images?.riyal}
+                    width={20}
+                    height={20}
+                    alt="Riyal icon"
+                  />
+                </span>
+                <div
+                  className={`absolute top-1/2 border-red-600 ${
+                    locale === "en" ? "-left-1" : "left-4"
+                  } ${
+                    digitsCount >= 5
+                      ? "w-[70px]"
+                      : digitsCount === 3
+                      ? "w-[45px]"
+                      : digitsCount === 4
+                      ? "w-[45px]"
+                      : digitsCount < 3
+                      ? "w-[28px]"
+                      : "w-[60px]"
+                  } border-t-4 -rotate-[15deg]`}
+                ></div>
+              </div>
+            </div>
+
+            <div className="flex flex-row gap-3  justify-center items-center">
+              <p className="text-center text-[11px] -mt-2">
+                غير شامل ضريبة القيمة المضافة
+              </p>
+            </div>
           </>
         ) : (
           <p className="text-[34px] font-bold flex flex-row justify-center items-center">
