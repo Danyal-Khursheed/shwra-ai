@@ -27,7 +27,7 @@ const Form = () => {
       phoneNumber: data?.phone,
       email: data?.email,
       detail: data?.help,
-      type: data?.topic,
+      type: "AIDashboardFeedback",
     };
 
     try {
