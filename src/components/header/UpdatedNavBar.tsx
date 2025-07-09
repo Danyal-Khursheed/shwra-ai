@@ -92,9 +92,7 @@ const UpdatedNavBar: FC<navbarInterface> = ({ textBlack }) => {
           height={40}
         />
         <div className="flex flex-row gap-5">
-          <div className="">
-            <Language textBlack={textBlack} />
-          </div>
+          <div className="">{/* <Language textBlack={textBlack} /> */}</div>
           <button onClick={toggleMenu} className="">
             <Image
               src={textBlack ? Images.toggle : Images.ToggelButton}
