@@ -74,7 +74,7 @@ const Hero = () => {
         >
           {t("Leverage the power of artificial intelligence")}
         </motion.p>
-        <div className="flex flex-row gap-7">
+        <div className="flex md:flex-row flex-col md:gap-7 gap-2 w-[80%] mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ const Hero = () => {
               href="https://portal.shwra.ai/ar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:w-sm w-[80%] p-3 rounded-xl mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
+              className="md:w-sm w-full p-3 rounded-xl mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
             >
               {t("start now")}
             </a>
@@ -105,7 +105,7 @@ const Hero = () => {
               href="https://portal.shwra.ai/ar/demo/detailsForm"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:w-sm w-[80%] p-3 rounded-xl mt-10 cursor-pointer md:font-semibold text-center transition-all duration-300"
+              className="md:w-sm w-full p-3 rounded-xl md:mt-10 mt-5 cursor-pointer md:font-semibold text-center transition-all duration-300"
               style={{
                 background: "linear-gradient(to right, #EBDFDE, #BFA7A4)",
               }}
