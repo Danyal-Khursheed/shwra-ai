@@ -142,5 +142,7 @@
   "error": "Field is requried",
   "Submit": "Submit",
   "Can I summarize a complex legal document": "Can I summarize a complex legal document?",
-  "the legal document summarization service": "Yes, the legal document summarization service provides you with an accurate summary of complex legal content in a simplified manner that helps in decision-making and understanding legal texts with ease."
+  "the legal document summarization service": "Yes, the legal document summarization service provides you with an accurate summary of complex legal content in a simplified manner that helps in decision-making and understanding legal texts with ease.",
+  "privacy": "Privacy Policies",
+  "terms": "Terms and Conditions"
 }

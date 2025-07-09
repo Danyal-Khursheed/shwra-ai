@@ -36,6 +36,9 @@ body {
   font-family: "Readex Pro", sans-serif;
   font-weight: 700;
 }
+.custom_font {
+  font-family: "Readex Pro", sans-serif;
+}
 
 .swiper {
   width: 100%;

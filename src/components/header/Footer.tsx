@@ -19,10 +19,16 @@ function Footer() {
   };
 
   const Links = [
-    { id: 1, title: translate("Home"), href: "/" },
-    { id: 2, title: translate("About Shwra"), href: "/boards-of-directors" },
-    { id: 4, title: translate("Contact Us"), href: "/contact-us" },
-    { id: 4, title: translate("FAQs"), href: "/faqs" },
+    { id: 1, title: translate("Home"), href: `/${language}/` },
+    {
+      id: 2,
+      title: translate("About Shwra"),
+      href: `/${language}/boards-of-directors`,
+    },
+    { id: 4, title: translate("Contact Us"), href: `/${language}/contact-us` },
+    { id: 4, title: translate("FAQs"), href: `/${language}/faqs` },
+    { id: 4, title: translate("privacy"), href: `/policies` },
+    { id: 4, title: translate("terms"), href: `/terms` },
   ];
 
   const isHomePage =
@@ -51,8 +57,8 @@ function Footer() {
               {Links?.map((dropdown: LinkItem, i: number) => (
                 <li key={i}>
                   <Link
-                    className="flex flex-col border-b border-[#171717] w-fit"
-                    href={`/${language}${dropdown.href}` || "/"}
+                    className="flex flex-col border-b  border-[#171717] w-fit"
+                    href={`${dropdown.href}` || "/"}
                   >
                     {dropdown.title}
                   </Link>

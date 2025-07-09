@@ -69,4 +69,5 @@ export const Images = {
   legalTransaltionService: "/assets/services/legalTransaltion.png",
   legalSummarizationService: "/assets/services/legalSummarization.png",
   searchEngineService: "/assets/services/search.png",
+  shwraFav: "/favIcon.svg",
 };
