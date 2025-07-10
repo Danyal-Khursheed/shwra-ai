@@ -127,7 +127,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
         {true ? (
           <>
             <p className="text-[34px] font-bold flex flex-row justify-center items-center">
-              {items.annualPackageAmount / 2}
+              {items.annualPackageAmount}
               <Image
                 src={Images?.riyal}
                 width={30}
@@ -139,7 +139,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
             <div className="flex justify-center items-center w-full -mt-4">
               <div className="relative">
                 <span className="text-[20px] flex flex-row text-[#667085] pe-1">
-                  {items.annualPackageAmount}
+                  {items.annualPackageAmount * 2}
                   <Image
                     src={Images?.riyal}
                     width={20}

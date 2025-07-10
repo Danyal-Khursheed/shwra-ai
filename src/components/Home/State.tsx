@@ -142,7 +142,7 @@ const statsData = [
   {
     title: "+66%",
     description:
-      "من الشركات يؤكدون على زيادة العملاء بعدك استخدام الذكاد الاصطناعي",
+      "من الشركات يؤكدون على زيادة العملاء بعد استخدام الذكاد الاصطناعي",
     descriptionEn:
       "Companies confirm an increase in customers after using artificial intelligence",
   },
