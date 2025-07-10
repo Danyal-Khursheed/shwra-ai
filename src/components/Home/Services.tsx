@@ -75,9 +75,9 @@ const Services = () => {
               <Image
                 src={selectedService.image}
                 alt={selectedService.titleEn}
-                width={600}
+                width={800}
                 height={400}
-                className="rounded-xl  object-contain"
+                className="rounded-xl   object-contain"
               />
             </motion.div>
 
