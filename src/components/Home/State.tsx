@@ -154,7 +154,7 @@ const statsData = [
   },
   {
     title: "+80%",
-    description: "توفير للوقت المخصص سابقا لمراجعة العقود سابقا",
+    description: "توفير للوقت المخصص سابقا لمراجعة العقود",
     descriptionEn: "Saving time previously allocated to reviewing contracts",
   },
   {

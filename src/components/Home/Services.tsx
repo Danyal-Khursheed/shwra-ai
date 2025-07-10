@@ -34,7 +34,7 @@ const Services = () => {
       />
 
       {selectedService && (
-        <div className="md:bg-primary-ai-light  w-[95%] mx-auto md:min-h-[80vh] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
+        <div className="md:bg-primary-ai-light  w-[95%] mx-auto md:min-h-[600px] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -77,7 +77,7 @@ const Services = () => {
                 alt={selectedService.titleEn}
                 width={600}
                 height={400}
-                className="rounded-xl w-full h-full object-contain"
+                className="rounded-xl  object-contain"
               />
             </motion.div>
 

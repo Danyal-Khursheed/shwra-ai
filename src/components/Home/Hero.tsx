@@ -10,7 +10,7 @@ const Hero = () => {
   const t = useTranslations();
   return (
     <div className="flex relative flex-col gap-7 text-white h-auto justify-center items-center  md:mt-32 mt-40 mb-20">
-      <div className="flex  justify-center">
+      <div className="flex  justify-center ">
         {/* header */}
         <motion.div
           className="absolute md:block hidden -top-16 right-1/4"
@@ -49,7 +49,7 @@ const Hero = () => {
           className="flex flex-row gap-3 justify-center items-center border border-white p-3 px-4 rounded-4xl mx-4"
         >
           <Image src={Images.ShwraBrownLogo} width={30} height={30} alt="" />
-          <p className="text-sm">
+          <p className="md:text-sm text-[10px]">
             {t(
               "Where we support the law with the power of artificial intelligence"
             )}
