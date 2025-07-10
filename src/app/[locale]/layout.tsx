@@ -13,6 +13,7 @@ import {
   SiteTitleEnglish,
 } from "@/constant/meta_data";
 import { Toaster } from "react-hot-toast";
+import { GTMCode } from "@/thirdParty/gtm-tracking";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -67,6 +68,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
           <Toaster position="top-center" />
           {children}
           <Footer />
+          <GTMCode />
         </NextIntlClientProvider>
       </body>
     </html>
