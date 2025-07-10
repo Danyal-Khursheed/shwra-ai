@@ -74,11 +74,11 @@ const Hero = () => {
         >
           {t("Leverage the power of artificial intelligence")}
         </motion.p>
-        <div className="flex md:flex-row flex-col md:gap-7 gap-2 w-[80%] mx-auto">
+        <div className="flex md:flex-row flex-col md:gap-7  gap-2  mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full flex justify-center"
@@ -87,16 +87,16 @@ const Hero = () => {
               href="https://portal.shwra.ai/ar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:w-sm w-full p-3 rounded-xl mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
+              className="md:w-sm w-full p-3 rounded-lg mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
             >
-              {t("start now")}
+              {t("start now2")}
             </a>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full flex justify-center"
@@ -105,7 +105,7 @@ const Hero = () => {
               href="https://portal.shwra.ai/ar/demo/detailsForm"
               target="_blank"
               rel="noopener noreferrer"
-              className="md:w-sm w-full p-3 rounded-xl md:mt-10 mt-5 cursor-pointer md:font-semibold text-center transition-all duration-300"
+              className="md:w-sm w-full p-3 rounded-lg md:mt-10 mt-5 cursor-pointer md:font-semibold text-center transition-all duration-300"
               style={{
                 background: "linear-gradient(to right, #EBDFDE, #BFA7A4)",
               }}
