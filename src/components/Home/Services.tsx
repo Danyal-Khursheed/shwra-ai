@@ -34,7 +34,7 @@ const Services = () => {
       />
 
       {selectedService && (
-        <div className="md:bg-primary-ai-light  w-[95%] mx-auto md:min-h-[600px] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
+        <div className="md:bg-primary-ai-light  w-[95%] mx-auto xl:min-h-[600px] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
           {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
@@ -82,7 +82,7 @@ const Services = () => {
             </motion.div>
 
             {/* Mobile Image */}
-            <div className="relative md:hidden block w-full aspect-[4/3] bg-[#EAECF0] rounded-lg px-3">
+            <div className="relative md:hidden block w-full aspect-[4/3]  rounded-lg px-3">
               <Image
                 src={selectedService.responsiveImage}
                 alt={selectedService.titleEn}

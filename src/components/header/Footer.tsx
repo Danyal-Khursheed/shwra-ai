@@ -51,7 +51,7 @@ function Footer() {
           </p>
           <div>
             <ul
-              className="flex md:text-start md:flex-row flex-col gap-5 text-base"
+              className="flex md:text-start xl:flex-row flex-col gap-5 text-base"
               style={{ fontWeight: 300 }}
             >
               {Links?.map((dropdown: LinkItem, i: number) => (
@@ -68,23 +68,21 @@ function Footer() {
           </div>
         </div>
         <div className="flex flex-col md:items-end mt-4">
-          <div className="flex flex-col items-center gap-3">
-            <motion.div
-              variants={slideIn(50, 0, { delay: 1.0, duration: 0.6 })}
-              initial="initial"
-              animate="animate"
-              className="w-full flex justify-center"
+          <motion.div
+            variants={slideIn(50, 0, { delay: 1.0, duration: 0.6 })}
+            initial="initial"
+            animate="animate"
+            className="w-full flex justify-center"
+          >
+            <a
+              href="https://portal.shwra.ai/ar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-76  p-3 rounded-lg mt-10 cursor-pointer md:font-semibold text-center bg-primary text-white"
             >
-              <a
-                href="https://portal.shwra.ai/ar/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="md:w-sm w-[80%] p-3 rounded-lg mt-10 cursor-pointer md:font-semibold text-center bg-primary text-white"
-              >
-                {buttonText}
-              </a>
-            </motion.div>
-          </div>
+              {buttonText}
+            </a>
+          </motion.div>
         </div>
       </div>
 
