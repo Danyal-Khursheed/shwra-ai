@@ -33,7 +33,7 @@ function Footer() {
 
   const isHomePage =
     pathname === `/${language}` || pathname === `/${language}/`;
-  const buttonText = isHomePage ? translate("start now") : translate("Demo");
+  const buttonText = isHomePage ? translate("start now2") : translate("Demo");
 
   return (
     <section className="font-madaniArabicMedium bg-primary-ai-light py-10 mt-16 px-4 md:px-0  text-black">
