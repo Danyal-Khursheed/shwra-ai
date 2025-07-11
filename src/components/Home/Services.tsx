@@ -117,7 +117,7 @@ const Services = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="relative md:hidden block w-full aspect-[4/3] bg-[#EAECF0] rounded-lg px-3"
+              className="relative md:hidden block w-full aspect-[4/3]  rounded-lg px-3"
             >
               <Image
                 src={selectedService.responsiveImage}

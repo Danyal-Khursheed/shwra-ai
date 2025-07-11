@@ -74,7 +74,7 @@ const Hero = () => {
         >
           {t("Leverage the power of artificial intelligence")}
         </motion.p>
-        <div className="flex md:flex-row flex-col md:gap-7  gap-2  mx-auto">
+        <div className="flex md:flex-row flex-col md:gap-7 md:w-[70%] w-[90%]  gap-2  mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}

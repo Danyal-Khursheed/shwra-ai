@@ -51,13 +51,13 @@ function Footer() {
           </p>
           <div>
             <ul
-              className="flex md:text-start xl:flex-row flex-col gap-5 text-base"
+              className="flex md:text-start xl:flex-row  flex-col gap-5 text-base"
               style={{ fontWeight: 300 }}
             >
               {Links?.map((dropdown: LinkItem, i: number) => (
                 <li key={i}>
                   <Link
-                    className="flex flex-col border-b  border-[#171717] w-fit"
+                    className="flex flex-col border-b font-semibold  border-[#171717] w-fit"
                     href={`${dropdown.href}` || "/"}
                   >
                     {dropdown.title}
