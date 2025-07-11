@@ -2,7 +2,6 @@
 import React, { FC, useEffect, useState } from "react";
 import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
-import Language from "./components/Language";
 import useLanguage from "@/hooks/useLanguage";
 import { useLocale } from "next-intl";
 import MenuMapping from "./components/menuMapping";

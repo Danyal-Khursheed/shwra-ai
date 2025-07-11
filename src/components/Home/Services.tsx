@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import HeadingTitle from "../heading/HeroHedaing";
 import { useTranslations } from "next-intl";
 import HorizontalTabBar from "../tabbar/Tabbar";
@@ -9,7 +9,35 @@ import { motion } from "framer-motion";
 
 const Services = () => {
   const t = useTranslations();
-  const [activeTab, setActiveTab] = useState<string>("tab-001");
+  const [activeTab, setActiveTab] = useState("tab-001");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const interval = setInterval(() => {
+      setActiveTab((prevTab) => {
+        const currentIndex = ServiceData.findIndex(
+          (service) => service.id === prevTab
+        );
+        const nextIndex = (currentIndex + 1) % ServiceData.length;
+        return ServiceData[nextIndex].id;
+      });
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [isMobile]);
 
   const handleActiveTab = (id: string) => {
     setActiveTab(id);
@@ -31,12 +59,14 @@ const Services = () => {
       <HorizontalTabBar
         handleActiveTab={handleActiveTab}
         activeTab={activeTab}
+        isMobile={isMobile}
       />
 
       {selectedService && (
-        <div className="md:bg-primary-ai-light  w-[95%] mx-auto xl:min-h-[600px] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
+        <div className="md:bg-primary-ai-light w-[95%] mx-auto md:min-h-[80vh] rounded-lg md:p-8 p-2 flex md:flex-row flex-col-reverse">
           {/* Text Content */}
           <motion.div
+            key={`text-${activeTab}`}
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -66,7 +96,7 @@ const Services = () => {
           <div className="w-full flex justify-center items-center aspect-[4/3]">
             {/* Desktop Image */}
             <motion.div
-              key={activeTab}
+              key={`desktop-${activeTab}`}
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -82,7 +112,13 @@ const Services = () => {
             </motion.div>
 
             {/* Mobile Image */}
-            <div className="relative md:hidden block w-full aspect-[4/3]  rounded-lg px-3">
+            <motion.div
+              key={`mobile-${activeTab}`}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative md:hidden block w-full aspect-[4/3] bg-[#EAECF0] rounded-lg px-3"
+            >
               <Image
                 src={selectedService.responsiveImage}
                 alt={selectedService.titleEn}
@@ -90,7 +126,7 @@ const Services = () => {
                 sizes="100vw"
                 className="rounded-lg object-contain px-3"
               />
-            </div>
+            </motion.div>
           </div>
         </div>
       )}

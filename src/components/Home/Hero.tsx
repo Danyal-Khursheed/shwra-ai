@@ -49,7 +49,7 @@ const Hero = () => {
           className="flex flex-row gap-3 justify-center items-center border border-white p-3 px-4 rounded-4xl mx-4"
         >
           <Image src={Images.ShwraBrownLogo} width={30} height={30} alt="" />
-          <p className="md:text-sm text-[10px]">
+          <p className="md:text-sm text-[10px] text-center">
             {t(
               "Where we support the law with the power of artificial intelligence"
             )}
