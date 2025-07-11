@@ -140,35 +140,35 @@ const Card: FC<cardinterface> = ({ title, description, descriptionEn }) => {
 
 const statsData = [
   {
-    title: "+66%",
+    title: "66%",
     description:
-      "من الشركات يؤكدون على زيادة العملاء بعد استخدام الذكاد الاصطناعي",
+      "من الشركات يؤكدون على زيادة العملاء بعد استخدام الذكاء الاصطناعي",
     descriptionEn:
       "Companies confirm an increase in customers after using artificial intelligence",
   },
   {
-    title: "+65%",
-    description: "من العملاء يفضلون الشركات التي تستخدم الذكاد الاصطناعي",
+    title: "65%",
+    description: "من العملاء يفضلون الشركات التي تستخدم الذكاء الاصطناعي",
     descriptionEn:
       "Customers prefer companies that use artificial intelligence",
   },
   {
-    title: "+80%",
+    title: "80%",
     description: "توفير للوقت المخصص سابقا لمراجعة العقود",
     descriptionEn: "Saving time previously allocated to reviewing contracts",
   },
   {
-    title: "+20%",
+    title: "20%",
     description: "توفير في تكاليف الخدمات القانونية",
     descriptionEn: "Savings on legal services costs",
   },
   {
-    title: "+40%",
+    title: "40%",
     description: "توفير للوقت الذي كان يهدر في البحث اليدوي",
     descriptionEn: "Save time wasted on manual searching",
   },
   {
-    title: "+79%",
+    title: "79%",
     description:
       "من المحامين استخدموا الذكاء الاصطناعي سنة 2024، بزيادة كبيرة عن 2023.",
     descriptionEn: "Lawyers used AI in 2024, a significant increase from 2023.",
