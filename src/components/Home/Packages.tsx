@@ -114,7 +114,7 @@ const PackageCard: React.FC<PackageCardProps> = ({
   return (
     <div
       // style={{ boxShadow: "0px 5px 20px 0px #14142B14" }}
-      className={`md:w-full flex flex-col justify-between bg-white overflow-hidden rounded-xl min-h-[400px] p-8 my-4 w-[90%] shadow-md `}
+      className={`md:w-full flex flex-col justify-between bg-white rounded-xl h-[720px] p-8 my-4 w-[75%] shadow-md`}
     >
       <div className="flex  flex-col overflow-x-hidden gap-3">
         <div className="flex flex-col">
