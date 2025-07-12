@@ -5,6 +5,7 @@ import React from "react";
 import { Images } from "../../../public/assets/Images";
 import { motion } from "framer-motion";
 import { fadeIn, slideIn } from "@/animations";
+import Link from "next/link";
 
 const Hero = () => {
   const t = useTranslations();
@@ -83,14 +84,14 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="w-full flex justify-center"
           >
-            <a
+            <Link
               href="https://portal.shwra.ai/ar/"
               target="_blank"
               rel="noopener noreferrer"
               className="md:w-sm w-full p-3 rounded-lg mt-10 bg-white border border-primary-ai text-primary-ai cursor-pointer md:font-semibold text-center transition-all duration-300"
             >
               {t("start now2")}
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -101,7 +102,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="w-full flex justify-center"
           >
-            <a
+            <Link
               href="https://portal.shwra.ai/ar/demo/detailsForm"
               target="_blank"
               rel="noopener noreferrer"
@@ -111,7 +112,7 @@ const Hero = () => {
               }}
             >
               {t("demo now")}
-            </a>
+            </Link>
           </motion.div>
         </div>
       </div>
