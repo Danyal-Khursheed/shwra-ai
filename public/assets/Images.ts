@@ -71,4 +71,19 @@ export const Images = {
   searchEngineService: "/assets/services/search.png",
   shwraFav: "/favIcon.svg",
   musheerServices: "/assets/services/musheer.png",
+
+  // webp
+  caseStudyServiceWebp: "/assets/services_optimized/caseStudy.webp",
+  contractReviewServiceWebp: "/assets/services_optimized/contractReview.webp",
+  documentDraftingServiceWebp:
+    "/assets/services_optimized/documentDrafting.webp",
+  documentReviewServiceWebp: "/assets/services_optimized/documentReview.webp",
+  documentReview2ServiceWebp: "/assets/services_optimized/documentReview2.webp",
+  legalSaasServiceWebp: "/assets/services_optimized/legalSaas.webp",
+  legalTransaltionServiceWebp:
+    "/assets/services_optimized/legalTransaltion.webp",
+  legalSummarizationServiceWebp:
+    "/assets/services_optimized/legalSummarization.webp",
+  searchEngineServiceWebp: "/assets/services_optimized/search.webp",
+  musheerServicesWebp: "/assets/services_optimized/musheer.webp",
 };

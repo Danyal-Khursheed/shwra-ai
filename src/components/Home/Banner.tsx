@@ -66,11 +66,12 @@ const Banner = () => {
           className="hidden md:flex justify-end items-center w-[40%] h-full"
         >
           <Image
-            src={Images?.musheer_interface_border}
+            src={Images?.musheerServicesWebp}
             alt="Musheer Interface"
             width={400}
             height={400}
-            className="-translate-y-3/8 translate-x-6"
+            loading="lazy"
+            className="-translate-y-3/8 translate-x-6 border-6 rounded-xl border-gray-800"
           />
         </motion.div>
       </div>

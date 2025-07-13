@@ -106,6 +106,7 @@ const Services = () => {
                 src={selectedService.image}
                 alt={selectedService.titleEn}
                 width={800}
+                loading="lazy"
                 height={400}
                 className="rounded-xl   object-contain"
               />
@@ -120,9 +121,10 @@ const Services = () => {
               className="relative md:hidden block w-full aspect-[4/3]  rounded-lg px-3"
             >
               <Image
-                src={selectedService.responsiveImage}
+                src={selectedService.image}
                 alt={selectedService.titleEn}
                 fill
+                loading="lazy"
                 sizes="100vw"
                 className="rounded-lg object-contain px-3"
               />
@@ -243,7 +245,7 @@ const ServiceData = [
       "Clarification of the expected judgment based on the available data, offering a realistic estimate of the likely outcome with legal reasoning.",
       "Guidance to involved parties on the best possible actions to take based on the legal analysis.",
     ],
-    image: Images.caseStudyService,
+    image: Images.caseStudyServiceWebp,
     responsiveImage: Images.case_study,
   },
   {
@@ -254,7 +256,7 @@ const ServiceData = [
       "توفر شورى للذكاء الإصطناعي خدمة ترجمة قانونية دقيقة واحترافية للوثائق والمستندات القانونية، مع الالتزام بالمصطلحات القانونية الدقيقة والامتثال التام لأنظمة المملكة، مما يضمن دقة الترجمة وسلامة المعنى القانوني على جميع اللغات.",
     descriptionEn:
       "Shawra AI provides accurate and professional legal translation services for legal documents and contracts, strictly adhering to precise legal terminology and full compliance with Saudi regulations—ensuring translation accuracy and preserving the legal meaning across all languages.",
-    image: Images.legalTransaltionService,
+    image: Images.legalTransaltionServiceWebp,
     responsiveImage: Images.translation,
   },
   {
@@ -277,7 +279,7 @@ const ServiceData = [
       "Ensuring compliance with Saudi laws and regulations, with automatic updates when needed.",
       "Customizing documents based on the type of entity (individuals – companies – government bodies).",
     ],
-    image: Images.documentDraftingService,
+    image: Images.documentDraftingServiceWebp,
     responsiveImage: Images.drafting_doc,
   },
   {
@@ -300,7 +302,7 @@ const ServiceData = [
       "Verifying full compliance with Saudi regulations and recent amendments.",
       "Simplified review reports that help you make confident and informed decisions.",
     ],
-    image: Images.documentReview2Service,
+    image: Images.documentReview2ServiceWebp,
     responsiveImage: Images.musheer_interface2,
   },
   {
@@ -323,7 +325,7 @@ const ServiceData = [
       "Fast turnaround to save time without compromising content accuracy.",
       "Clear and easy-to-understand summaries to help both legal professionals and non-specialists grasp legal documents effortlessly.",
     ],
-    image: Images.legalSummarizationService,
+    image: Images.legalSummarizationServiceWebp,
     responsiveImage: Images.summerization2,
   },
   {
@@ -352,7 +354,7 @@ const ServiceData = [
       "تم تصميم هذه الأداة لتوفير وقت المحامي، وتحسين الإنتاجية، وضمان جودة المتابعة القانونية بأعلى المعايير.",
     endDescriptionEn:
       "This tool is designed to save attorneys time, improve productivity, and ensure the highest quality legal follow-up.",
-    image: Images.legalSaasService,
+    image: Images.legalSaasServiceWebp,
     responsiveImage: Images.saas,
   },
 ];

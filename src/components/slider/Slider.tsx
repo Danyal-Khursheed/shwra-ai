@@ -8,16 +8,16 @@ import Image from "next/image";
 import { Images } from "../../../public/assets/Images";
 
 const slides = [
-  Images.musheerServices,
-  Images.search_engine,
-  Images.summerization,
-  Images.contract_review_interface,
-  Images.case_study,
-  Images.translation,
-  Images.drafting_doc,
+  Images.musheerServicesWebp,
+  Images.searchEngineServiceWebp,
+  Images.legalSummarizationServiceWebp,
+  Images.contractReviewServiceWebp,
+  Images.caseStudyServiceWebp,
+  Images.legalTransaltionServiceWebp,
+  Images.documentDraftingServiceWebp,
   Images.analyze,
-  Images.summerization2,
-  Images.saas,
+  Images.legalSummarizationServiceWebp,
+  Images.legalSaasServiceWebp,
 ];
 
 const Slider = () => {
@@ -67,7 +67,8 @@ const Slider = () => {
                 fill
                 sizes="100vw"
                 className="object-cover"
-                priority={index === 0}
+                // priority={index === 0}
+                loading="lazy"
               />
             </div>
           </SwiperSlide>

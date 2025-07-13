@@ -38,6 +38,7 @@ const State = () => {
                 alt=""
                 width={150}
                 height={150}
+                loading="lazy"
               />
             </motion.div>
           </div>
