@@ -63,12 +63,12 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
         dir={locale === "ar" ? "rtl" : "ltr"}
         className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
+        <GTMCode />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Navbar />
           <Toaster position="top-center" />
           {children}
           <Footer />
-          <GTMCode />
         </NextIntlClientProvider>
       </body>
     </html>
