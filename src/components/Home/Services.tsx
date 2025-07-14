@@ -178,7 +178,7 @@ const ServiceData = [
       "Instant access to the latest laws and amendments to ensure up-to-date legal information aligned with the newest legal updates.",
       "Comprehensive coverage of laws, regulations, court rulings, and all legal information.",
     ],
-    image: Images.searchEngineService,
+    image: Images.searchEngineServiceWebp,
     responsiveImage: Images.search_engine,
   },
   {
@@ -201,7 +201,7 @@ const ServiceData = [
       "Full compliance with Saudi laws, with automatic updates for any regulatory changes.",
       "Customizable contract drafting that includes all the details you need without complexity.",
     ],
-    image: Images.contractReviewService,
+    image: Images.contractReviewServiceWebp,
     responsiveImage: Images.summerization,
   },
   {

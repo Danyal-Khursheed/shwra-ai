@@ -5,7 +5,6 @@ export const GTMCode = () => {
   return (
     <>
       <Script
-        strategy="lazyOnload"
         id="GTM"
         dangerouslySetInnerHTML={{
           __html: `
