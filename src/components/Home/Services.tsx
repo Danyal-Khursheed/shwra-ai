@@ -110,7 +110,7 @@ const Services = () => {
                 className="rounded-xl   object-contain"
               />
             </motion.div>
-
+            {/*  */}
             {/* Mobile Image */}
             <motion.div
               key={`mobile-${activeTab}`}
