@@ -106,7 +106,6 @@ const Services = () => {
                 src={selectedService.image}
                 alt={selectedService.titleEn}
                 width={800}
-                loading="lazy"
                 height={400}
                 className="rounded-xl   object-contain"
               />
@@ -124,7 +123,6 @@ const Services = () => {
                 src={selectedService.image}
                 alt={selectedService.titleEn}
                 fill
-                loading="lazy"
                 sizes="100vw"
                 className="rounded-lg object-contain px-3"
               />

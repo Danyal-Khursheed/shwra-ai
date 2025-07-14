@@ -67,8 +67,7 @@ const Slider = () => {
                 fill
                 sizes="100vw"
                 className="object-cover"
-                // priority={index === 0}
-                loading="lazy"
+                priority={index === 0}
               />
             </div>
           </SwiperSlide>
