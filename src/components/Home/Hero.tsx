@@ -60,7 +60,7 @@ const Hero = () => {
       {/* hero */}
       <div className="flex justify-center items-center flex-col gap-5">
         <motion.h1
-          variants={slideIn(50, 0, { delay: 0.5, duration: 0.6 })}
+          variants={slideIn(50, 0, { delay: 0.2, duration: 0.3 })}
           initial="initial"
           animate="animate"
           className="md:text-[48px] text-[23px] md:max-w-[60%] max-w-[90%] mx-auto text-center font-semibold"
@@ -68,7 +68,7 @@ const Hero = () => {
           {t("Revolutionizing legal services through artificial intelligence")}
         </motion.h1>
         <motion.p
-          variants={slideIn(50, 0, { delay: 0.8, duration: 0.6 })}
+          variants={slideIn(50, 0, { delay: 0.4, duration: 0.3 })}
           initial="initial"
           animate="animate"
           className="md:w-[50%] w-[90%] text-center text-[16px]"
@@ -79,7 +79,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.2, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full flex justify-center"
@@ -97,7 +97,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1, duration: 0.4, ease: "easeOut" }}
+            transition={{ delay: 0.1, duration: 0.2, ease: "easeOut" }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full flex justify-center"
