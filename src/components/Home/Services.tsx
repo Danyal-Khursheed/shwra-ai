@@ -201,7 +201,7 @@ const ServiceData = [
       "Full compliance with Saudi laws, with automatic updates for any regulatory changes.",
       "Customizable contract drafting that includes all the details you need without complexity.",
     ],
-    image: Images.contractReviewServiceWebp,
+    image: Images.contractDraftingServicesWebp,
     responsiveImage: Images.summerization,
   },
   {
@@ -224,7 +224,7 @@ const ServiceData = [
       "Review fully aligned with Saudi laws and regulations, automatically updated.",
       "Clear and simplified reports that support confident decision-making.",
     ],
-    image: Images.contractReviewService,
+    image: Images.contractReviewServiceWebp,
     responsiveImage: Images.contract_review_interface,
   },
   {

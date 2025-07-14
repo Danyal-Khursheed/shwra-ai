@@ -86,4 +86,6 @@ export const Images = {
     "/assets/services_optimized/legalSummarization.webp",
   searchEngineServiceWebp: "/assets/services_optimized/search.webp",
   musheerServicesWebp: "/assets/services_optimized/musheer.webp",
+  contractDraftingServicesWebp:
+    "/assets/services_optimized/contractDraftingServicesWebp.webp",
 };
